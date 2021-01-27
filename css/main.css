@@ -1521,15 +1521,25 @@ button[name=cart-minus]:hover{
 	margin-right: 3vh!important;
 	color: #999;
 }
-input[name=subdisplay]{
+input[name=subdisplay] {
+  -moz-appearance: textfield;
+	text-align:center;
+	width: 10vh;
+	height: 100%;
+	border:none;
+	border-radius:5px;
+	font-family: UTM Alter Gothic;
+	font-size: 1rem;
+	letter-spacing: 0.02rem;
 	color:orange!important;
 	pointer-events:none;
 	background:transparent!important;
 	box-shadow: inset 2px 2px 4px #f2f2f2,
 		inset -2px -2px 4px #fff;
 }
-
-
+input[name=subdisplay]:focus{
+	color: #e6a537!important;
+}
 /*
 ------------ ------------ ------------ ------------ ------------ ------------ CHECK OUT
 */
