@@ -1521,7 +1521,34 @@ button[name=cart-minus]:hover{
 	margin-right: 3vh!important;
 	color: #999;
 }
-#subtotal1{
+#subtotal1,
+#subtotal2,
+#subtotal3,
+#subtotal4,
+#subtotal5,
+#subtotal6,
+#subtotal7,
+#subtotal8,
+#subtotal9,
+#subtotal10,
+#subtotal12,
+#subtotal13,
+#subtotal14,
+#subtotal15,
+#subtotal16,
+#subtotal17,
+#subtotal18,
+#subtotal19,
+#subtotal20,
+#subtotal21,
+#subtotal22,
+#subtotal23,
+#subtotal24,
+#subtotal25,
+#subtotal26,
+#subtotal27,
+#subtotal28
+{
 	color:orange!important;
 	pointer-events:none;
 	background:transparent!important;
