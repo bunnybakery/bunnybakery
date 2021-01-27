@@ -57,7 +57,7 @@
         <div class="cart-list">
           <!------------------------------------->
           <div class="cart-item" id="cart-item-1">
-            <button name="cart-item-remove" onclick="itemremove1()">X</button>
+            <button name="cart-item-remove" onclick="itemremove1(); reset1(); subcal1(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (3).png" alt="" />
             </div>
@@ -87,7 +87,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-2">
-            <button name="cart-item-remove" onclick="itemremove2()">X</button>
+            <button name="cart-item-remove" onclick="itemremove2(); reset2(); subcal2(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (4).png" alt="" />
             </div>
@@ -117,7 +117,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-3">
-            <button name="cart-item-remove" onclick="itemremove3()">X</button>
+            <button name="cart-item-remove" onclick="itemremove3(); reset3(); subcal3(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (5).png" alt="" />
             </div>
@@ -147,7 +147,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-4">
-            <button name="cart-item-remove" onclick="itemremove4()">X</button>
+            <button name="cart-item-remove" onclick="itemremove4(); reset4(); subcal4(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (6).png" alt="" />
             </div>
@@ -177,7 +177,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-5">
-            <button name="cart-item-remove" onclick="itemremove5()">X</button>
+            <button name="cart-item-remove" onclick="itemremove5(); reset5(); subcal5(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (7).png" alt="" />
             </div>
@@ -207,7 +207,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-6">
-            <button name="cart-item-remove" onclick="itemremove6()">X</button>
+            <button name="cart-item-remove" onclick="itemremove6(); reset6(); subcal6(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (8).png" alt="" />
             </div>
@@ -237,7 +237,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-7">
-            <button name="cart-item-remove" onclick="itemremove7()">X</button>
+            <button name="cart-item-remove" onclick="itemremove7(); reset7(); subcal7(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (9).png" alt="" />
             </div>
@@ -267,7 +267,7 @@
 
           <!------------------------------------->
           <div class="cart-item" id="cart-item-8">
-            <button name="cart-item-remove" onclick="itemremove8()">X</button>
+            <button name="cart-item-remove" onclick="itemremove8(); reset8(); subcal8(); totalcal();">X</button>
             <div class="cart-item-thumb">
               <img src="img/itemthumb/item (10).png" alt="" />
             </div>
@@ -4210,6 +4210,198 @@
     </script>
 
     <script>
+
+		var price1 = 8;
+        var price2 = 14;
+        var price3 = 12;
+        var price4 = 8;
+        var price5 = 7;
+        var price6 = 15;
+        var price7 = 5;
+        var price8 = 18;
+        var price9 = 22;
+        var price10 = 15;
+        var price11 = 18;
+        var price12 = 15;
+        var price13 = 5;
+        var price14 = 180;
+        var price15 = 25;
+        var price16 = 12;
+        var price17 = 65;
+        var price18 = 27;
+        var price19 = 22;
+        var price20 = 35;
+        var price21 = 27;
+        var price22 = 22;
+        var price23 = 22;
+        var price24 = 22;
+        var price25 = 27;
+        var price26 = 25;
+        var price27 = 22;
+        var price28 = 32;
+
+var subprice1 = document.getElementById("subtotal1").value;
+var subprice2 = document.getElementById("subtotal2").value;
+var subprice3 = document.getElementById("subtotal3").value;
+var subprice4 = document.getElementById("subtotal4").value;
+var subprice5 = document.getElementById("subtotal5").value;
+var subprice6 = document.getElementById("subtotal6").value;
+var subprice7 = document.getElementById("subtotal7").value;
+var subprice8 = document.getElementById("subtotal8").value;
+var subprice9 = document.getElementById("subtotal9").value;
+var subprice10 = document.getElementById("subtotal10").value;
+var subprice11 = document.getElementById("subtotal11").value;
+var subprice12 = document.getElementById("subtotal12").value;
+var subprice13 = document.getElementById("subtotal13").value;
+var subprice14 = document.getElementById("subtotal14").value;
+var subprice15 = document.getElementById("subtotal15").value;
+var subprice16 = document.getElementById("subtotal16").value;
+var subprice17 = document.getElementById("subtotal17").value;
+var subprice18 = document.getElementById("subtotal18").value;
+var subprice19 = document.getElementById("subtotal19").value;
+var subprice20 = document.getElementById("subtotal20").value;
+var subprice21 = document.getElementById("subtotal21").value;
+var subprice22 = document.getElementById("subtotal22").value;
+var subprice23 = document.getElementById("subtotal23").value;
+var subprice24 = document.getElementById("subtotal24").value;
+var subprice25 = document.getElementById("subtotal25").value;
+var subprice26 = document.getElementById("subtotal26").value;
+var subprice27 = document.getElementById("subtotal27").value;
+var subprice28 = document.getElementById("subtotal28").value;
+
+function reset1(){
+	document.getElementsById("idisplay1").value = 0;
+}
+function reset2(){
+	document.getElementsById("idisplay2").value = 0;
+}
+function reset3(){
+	document.getElementsById("idisplay3").value = 0;
+}
+function reset4(){
+	document.getElementsById("idisplay4").value = 0;
+}
+function reset5(){
+	document.getElementsById("idisplay5").value = 0;
+}
+function reset6(){
+	document.getElementsById("idisplay6").value = 0;
+}
+function reset7(){
+	document.getElementsById("idisplay7").value = 0;
+}
+function reset8(){
+	document.getElementsById("idisplay8").value = 0;
+}
+function reset9(){
+	document.getElementsById("idisplay9").value = 0;
+}
+function reset10(){
+	document.getElementsById("idisplay10").value = 0;
+}
+function reset11(){
+	document.getElementsById("idisplay11").value = 0;
+}
+function reset12(){
+	document.getElementsById("idisplay12").value = 0;
+}
+function reset13(){
+	document.getElementsById("idisplay13").value = 0;
+}
+function reset14(){
+	document.getElementsById("idisplay14").value = 0;
+}
+function reset15(){
+	document.getElementsById("idisplay15").value = 0;
+}
+function reset16(){
+	document.getElementsById("idisplay16").value = 0;
+}
+function reset17(){
+	document.getElementsById("idisplay17").value = 0;
+}
+function reset18(){
+	document.getElementsById("idisplay18").value = 0;
+}
+function reset19(){
+	document.getElementsById("idisplay19").value = 0;
+}
+function reset20(){
+	document.getElementsById("idisplay20").value = 0;
+}
+function reset21(){
+	document.getElementsById("idisplay21").value = 0;
+}
+function reset22(){
+	document.getElementsById("idisplay22").value = 0;
+}
+function reset23(){
+	document.getElementsById("idisplay23").value = 0;
+}
+function reset24(){
+	document.getElementsById("idisplay24").value = 0;
+}
+function reset25(){
+	document.getElementsById("idisplay25").value = 0;
+}
+function reset26(){
+	document.getElementsById("idisplay26").value = 0;
+}
+function reset27(){
+	document.getElementsById("idisplay27").value = 0;
+}
+function reset28(){
+	document.getElementsById("idisplay28").value = 0;
+}
+
+subprice1 = price1 * 1000 * document.getElementById("idisplay1").value;
+subprice2 = price2 * 1000 * document.getElementById("idisplay2").value;
+subprice3 = price3 * 1000 * document.getElementById("idisplay3").value;
+subprice4 = price4 * 1000 * document.getElementById("idisplay4").value;
+subprice5 = price5 * 1000 * document.getElementById("idisplay5").value;
+subprice6 = price6 * 1000 * document.getElementById("idisplay6").value;
+subprice7 = price7 * 1000 * document.getElementById("idisplay7").value;
+subprice8 = price8 * 1000 * document.getElementById("idisplay8").value;
+subprice9 = price9 * 1000 * document.getElementById("idisplay9").value;
+subprice10 =
+  price10 * 1000 * document.getElementById("idisplay10").value;
+subprice11 =
+  price11 * 1000 * document.getElementById("idisplay11").value;
+subprice12 =
+  price12 * 1000 * document.getElementById("idisplay12").value;
+subprice13 =
+  price13 * 1000 * document.getElementById("idisplay13").value;
+subprice14 =
+  price14 * 1000 * document.getElementById("idisplay14").value;
+subprice15 =
+  price15 * 1000 * document.getElementById("idisplay15").value;
+subprice16 =
+  price16 * 1000 * document.getElementById("idisplay16").value;
+subprice17 =
+  price17 * 1000 * document.getElementById("idisplay17").value;
+subprice18 =
+  price18 * 1000 * document.getElementById("idisplay18").value;
+subprice19 =
+  price19 * 1000 * document.getElementById("idisplay19").value;
+subprice20 =
+  price20 * 1000 * document.getElementById("idisplay20").value;
+subprice21 =
+  price21 * 1000 * document.getElementById("idisplay21").value;
+subprice22 =
+  price22 * 1000 * document.getElementById("idisplay22").value;
+subprice23 =
+  price23 * 1000 * document.getElementById("idisplay23").value;
+subprice24 =
+  price24 * 1000 * document.getElementById("idisplay24").value;
+subprice25 =
+  price25 * 1000 * document.getElementById("idisplay25").value;
+subprice26 =
+  price26 * 1000 * document.getElementById("idisplay26").value;
+subprice27 =
+  price27 * 1000 * document.getElementById("idisplay27").value;
+subprice28 =
+  price28 * 1000 * document.getElementById("idisplay28").value;
+
       function detailplus1() {
         document.getElementById("idisplay1").value++;
         document.getElementById("cartdisplay1").value++;
@@ -5285,111 +5477,6 @@
       }
 
       function totalcal() {
-        var price1 = 8;
-        var price2 = 14;
-        var price3 = 12;
-        var price4 = 8;
-        var price5 = 7;
-        var price6 = 15;
-        var price7 = 5;
-        var price8 = 18;
-        var price9 = 22;
-        var price10 = 15;
-        var price11 = 18;
-        var price12 = 15;
-        var price13 = 5;
-        var price14 = 180;
-        var price15 = 25;
-        var price16 = 12;
-        var price17 = 65;
-        var price18 = 27;
-        var price19 = 22;
-        var price20 = 35;
-        var price21 = 27;
-        var price22 = 22;
-        var price23 = 22;
-        var price24 = 22;
-        var price25 = 27;
-        var price26 = 25;
-        var price27 = 22;
-        var price28 = 32;
-
-        var subprice1 = document.getElementById("subtotal1").value;
-        var subprice2 = document.getElementById("subtotal2").value;
-        var subprice3 = document.getElementById("subtotal3").value;
-        var subprice4 = document.getElementById("subtotal4").value;
-        var subprice5 = document.getElementById("subtotal5").value;
-        var subprice6 = document.getElementById("subtotal6").value;
-        var subprice7 = document.getElementById("subtotal7").value;
-        var subprice8 = document.getElementById("subtotal8").value;
-        var subprice9 = document.getElementById("subtotal9").value;
-        var subprice10 = document.getElementById("subtotal10").value;
-        var subprice11 = document.getElementById("subtotal11").value;
-        var subprice12 = document.getElementById("subtotal12").value;
-        var subprice13 = document.getElementById("subtotal13").value;
-        var subprice14 = document.getElementById("subtotal14").value;
-        var subprice15 = document.getElementById("subtotal15").value;
-        var subprice16 = document.getElementById("subtotal16").value;
-        var subprice17 = document.getElementById("subtotal17").value;
-        var subprice18 = document.getElementById("subtotal18").value;
-        var subprice19 = document.getElementById("subtotal19").value;
-        var subprice20 = document.getElementById("subtotal20").value;
-        var subprice21 = document.getElementById("subtotal21").value;
-        var subprice22 = document.getElementById("subtotal22").value;
-        var subprice23 = document.getElementById("subtotal23").value;
-        var subprice24 = document.getElementById("subtotal24").value;
-        var subprice25 = document.getElementById("subtotal25").value;
-        var subprice26 = document.getElementById("subtotal26").value;
-        var subprice27 = document.getElementById("subtotal27").value;
-        var subprice28 = document.getElementById("subtotal28").value;
-
-        subprice1 = price1 * 1000 * document.getElementById("idisplay1").value;
-        subprice2 = price2 * 1000 * document.getElementById("idisplay2").value;
-        subprice3 = price3 * 1000 * document.getElementById("idisplay3").value;
-        subprice4 = price4 * 1000 * document.getElementById("idisplay4").value;
-        subprice5 = price5 * 1000 * document.getElementById("idisplay5").value;
-        subprice6 = price6 * 1000 * document.getElementById("idisplay6").value;
-        subprice7 = price7 * 1000 * document.getElementById("idisplay7").value;
-        subprice8 = price8 * 1000 * document.getElementById("idisplay8").value;
-        subprice9 = price9 * 1000 * document.getElementById("idisplay9").value;
-        subprice10 =
-          price10 * 1000 * document.getElementById("idisplay10").value;
-        subprice11 =
-          price11 * 1000 * document.getElementById("idisplay11").value;
-        subprice12 =
-          price12 * 1000 * document.getElementById("idisplay12").value;
-        subprice13 =
-          price13 * 1000 * document.getElementById("idisplay13").value;
-        subprice14 =
-          price14 * 1000 * document.getElementById("idisplay14").value;
-        subprice15 =
-          price15 * 1000 * document.getElementById("idisplay15").value;
-        subprice16 =
-          price16 * 1000 * document.getElementById("idisplay16").value;
-        subprice17 =
-          price17 * 1000 * document.getElementById("idisplay17").value;
-        subprice18 =
-          price18 * 1000 * document.getElementById("idisplay18").value;
-        subprice19 =
-          price19 * 1000 * document.getElementById("idisplay19").value;
-        subprice20 =
-          price20 * 1000 * document.getElementById("idisplay20").value;
-        subprice21 =
-          price21 * 1000 * document.getElementById("idisplay21").value;
-        subprice22 =
-          price22 * 1000 * document.getElementById("idisplay22").value;
-        subprice23 =
-          price23 * 1000 * document.getElementById("idisplay23").value;
-        subprice24 =
-          price24 * 1000 * document.getElementById("idisplay24").value;
-        subprice25 =
-          price25 * 1000 * document.getElementById("idisplay25").value;
-        subprice26 =
-          price26 * 1000 * document.getElementById("idisplay26").value;
-        subprice27 =
-          price27 * 1000 * document.getElementById("idisplay27").value;
-        subprice28 =
-          price28 * 1000 * document.getElementById("idisplay28").value;
 
         var total = 0;
         document.getElementById("total").value =
