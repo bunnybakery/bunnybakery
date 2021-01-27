@@ -1,0 +1,3238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BUNNY BAKERY</title>
+	<!--css-->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<!--bootstrap 4 + jquery + popper-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!--font awesome-->
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+	<!--other css
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css">
+    <link rel="stylesheet" href="css/w3-slideshow.css" type="text/css">-->
+    <link rel="stylesheet" href="css/w3-CONTACTform.css" type="text/css">
+</head>
+
+<body>
+
+	<div class="popup" id="popup-checkout">
+		<div class="popup-item">
+			<button name="popup-back" onclick="backcheckout()"><</button>
+                        <button name="popup-close" onclick="exitcheckout()">X</button>
+                        <p class="popup-title">THANH TOÁN</p>
+			<div class="my-contact-form" id="check-out">
+				<input type="text" placeholder="Họ tên" name="user-name">
+				<input type="text" placeholder="Số điện thoại" name="user-contact">
+				<input type="text" placeholder="Địa chỉ nhận hàng" name="user-address">
+				<input type="text" placeholder="Ghi chú" name="text-field-note">
+				<button type="submit" name="checkout-confirm" onclick="checkoutconfirm()">XÁC NHẬN</button>
+			</div>
+                </div>
+	</div>
+
+
+
+
+	<div class="popup" id="popup-cart">
+		<div class="popup-item cart-wrapper">
+                        <button name="popup-back" onclick="backcart()"><</button>
+                        <button name="popup-close" onclick="exitcart()">X</button>
+                        <p class="cart-title">GIỎ HÀNG</p>
+			<div class="cart-list">
+				<!------------------------------------->
+				<div class="cart-item" id="cart-item-1">
+					<button name="cart-item-remove" onclick="itemremove1()">X</button>
+					<div class="cart-item-thumb">
+						<img src="img/itemthumb/item (3).png" alt="">
+					</div>
+					<div class="cart-item-info">
+						<p><span class="cart-item-title">CREAM BUN</span></p>
+						<p><span class="price">14 000 VND/cái</span></p>
+					</div>
+					<div class="item-action">
+						<button type="submit" name="cart-plus" onclick="cartplus1();subcal1();totalcal();">+</button>
+						<input type="number" name="cartdisplay" id="cartdisplay1" value="0">
+						<button type="submit" name="cart-minus" onclick="cartminus1()">---</button>
+					</div>
+					<div class="cart-subtotal">
+						<span class="cart-item-title">VND</span>
+						<input type="number" name="idisplay" id="subtotal1" value="0">
+					</div>
+				</div>
+
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-2">
+	<button name="cart-item-remove" onclick="itemremove2()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (4).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CROISSANT</span></p>
+	<p><span class="price">14 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus2()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay2" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus2()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal2" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-3">
+	<button name="cart-item-remove" onclick="itemremove3()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (5).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">BAGUETTE</span></p>
+	<p><span class="price">12 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus3()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay3" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus3()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal3" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-4">
+	<button name="cart-item-remove" onclick="itemremove4()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (6).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">BAGEL</span></p>
+	<p><span class="price">8 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus4()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay4" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus4()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal4" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-5">
+	<button name="cart-item-remove" onclick="itemremove5()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (7).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">PRETZEL</span></p>
+	<p><span class="price">7 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus5()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay5" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus5()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal5" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-6">
+	<button name="cart-item-remove" onclick="itemremove6()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (8).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">WHITE BREAD</span></p>
+	<p><span class="price">15 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus6()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay6" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus6()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal6" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-7">
+	<button name="cart-item-remove" onclick="itemremove7()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (9).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">SAIGON BAGUETTE</span></p>
+	<p><span class="price">5 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus7()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay7" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus7()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal7" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-8">
+	<button name="cart-item-remove" onclick="itemremove8()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (10).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">TORTILLA</span></p>
+	<p><span class="price">18 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus8()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay8" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus8()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal8" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-9">
+	<button name="cart-item-remove" onclick="itemremove9()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (11).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CHALLAH</span></p>
+	<p><span class="price">22 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus9()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay9" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus9()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal9" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-10">
+	<button name="cart-item-remove" onclick="itemremove10()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (12).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">KAYA</span></p>
+	<p><span class="price">15 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus10()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay10" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus10()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal10" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-11">
+	<button name="cart-item-remove" onclick="itemremove11()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (13).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">HAMBURGER</span></p>
+	<p><span class="price">18 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus11()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay11" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus11()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal11" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-12">
+	<button name="cart-item-remove" onclick="itemremove12()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (14).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">KEBAB</span></p>
+	<p><span class="price">15 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus12()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay12" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus12()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal12" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-13">
+	<button name="cart-item-remove" onclick="itemremove13()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (19).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CHOUX À LA CRÈME</span></p>
+	<p><span class="price">5 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus13()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay13" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus13()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal13" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-14">
+	<button name="cart-item-remove" onclick="itemremove14()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (15).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CHEESECAKE</span></p>
+	<p><span class="price">180 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus14()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay14" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus14()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal14" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-15">
+	<button name="cart-item-remove" onclick="itemremove15()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (17).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">MACARON</span></p>
+	<p><span class="price">25 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus15()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay15" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus15()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal15" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-16">
+	<button name="cart-item-remove" onclick="itemremove16()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (20).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">PANCAKE</span></p>
+	<p><span class="price">12 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus16()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay16" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus16()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal16" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-17">
+	<button name="cart-item-remove" onclick="itemremove17()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (18).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">TIRAMISU</span></p>
+	<p><span class="price">65 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus17()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay17" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus17()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal17" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-18">
+	<button name="cart-item-remove" onclick="itemremove18()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (16).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CUPCAKE</span></p>
+	<p><span class="price">27 000 VND/cái</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus18()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay18" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus18()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal18" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-19">
+	<button name="cart-item-remove" onclick="itemremove19()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (22).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CHANH BẠC HÀ</span></p>
+	<p><span class="price">22 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus19()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay19" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus19()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal19" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-20">
+	<button name="cart-item-remove" onclick="itemremove20()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (23).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">MOCKTAIL COCHINCHIN</span></p>
+	<p><span class="price">35 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus20()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay20" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus20()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal20" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-21">
+	<button name="cart-item-remove" onclick="itemremove21()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (24).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">SMOOTHIE DÂU TÂY</span></p>
+	<p><span class="price">27 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus21()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay21" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus21()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal21" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-22">
+	<button name="cart-item-remove" onclick="itemremove22()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (25).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">SODA TẮC LẠNH</span></p>
+	<p><span class="price">27 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus22()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay22" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus22()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal22" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-23">
+	<button name="cart-item-remove" onclick="itemremove23()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (26).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CAPPUCCINO</span></p>
+	<p><span class="price">22 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus23()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay23" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus23()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal23" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-24">
+	<button name="cart-item-remove" onclick="itemremove24()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (27).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">TRÀ HOA CÚC</span></p>
+	<p><span class="price">22 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus24()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay24" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus24()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal24" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-25">
+	<button name="cart-item-remove" onclick="itemremove25()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (28).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">DÂU ĐEN CHANH ĐÀO</span></p>
+	<p><span class="price">27 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus25()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay25" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus25()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal25" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-26">
+	<button name="cart-item-remove" onclick="itemremove26()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (1).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">MOJITO PHÚC BỒN TỬ</span></p>
+	<p><span class="price">25 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus26()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay26" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus26()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal26" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-27">
+	<button name="cart-item-remove" onclick="itemremove27()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (2).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">TRÀ THẢO MỘC</span></p>
+	<p><span class="price">22 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus27()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay27" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus27()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal27" value="0">
+</div>
+</div>
+
+<!------------------------------------->
+<div class="cart-item" id="cart-item-28">
+	<button name="cart-item-remove" onclick="itemremove28()">X</button>
+<div class="cart-item-thumb">
+	<img src="img/itemthumb/item (21).png" alt="">
+</div>
+<div class="cart-item-info">
+	<p><span class="cart-item-title">CHOCOLATE ICE BLEND</span></p>
+	<p><span class="price">32 000 VND/ly</span></p>
+</div>
+<div class="item-action">
+	<button type="submit" name="cart-plus" onclick="cartplus28()">+</button>
+	<input type="number" name="cartdisplay" id="cartdisplay28" value="0">
+	<button type="submit" name="cart-minus" onclick="cartminus28()">---</button>
+</div>
+<div class="cart-subtotal">
+<span class="cart-item-title">VND</span>
+	<input type="number" name="idisplay" id="subtotal28" value="0">
+</div>
+</div>
+
+
+
+
+			</div>
+			<div class="cart-action">
+				<p>TỔNG CỘNG:</p>
+				<input type="number" name="totaldisplay" id="total" value="0">
+				<button type="submit" name="checkout" onclick="popupcheckout()">THANH TOÁN</button>
+			</div>
+                </div>
+	</div>
+
+
+
+
+
+        <div class="popup" id="popup-1">
+                <div class="popup-item">
+                        <button name="popup-close" onclick="exit()">X</button>
+			<div class="popup-thumb">
+                        	<img src="img/itemthumb/item (3).png" alt="">
+			</div>
+                        <div class="popup-content">
+                                <p class="popup-title">CREAM BUN</p>
+                                <p class="popup-subtitle">Bánh bơ sữa nhỏ - [BR211]</p>
+                                <p class="popup-description">Với phần vỏ ngoài giòn vừa đủ bao lấy phần nhân bơ thơm mịn ở bên trong một cách hoàn hảo, chắc chắn chỉ ngửi mùi thôi sẽ khiến bạn không thể nào chối từ!
+				<br>
+				<br>Đơn giá: <span class="price">8 000 VND/cái</span></p>
+				<div class="popup-action">
+					<button type="submit" name="detail-plus" onclick="detailplus1()">+</button>
+					<input type="number" name="idisplay" id="idisplay1" value="0">
+					<button type="submit" name="detail-minus" onclick="detailminus1()">---</button>
+					<button type="submit" name="addtocart" onclick="addToCart1(this)">THÊM VÀO GIỎ</button>
+					<button type="submit" name="cta" onclick="popupcart()">
+						<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+					</button>
+				</div>
+                                <p class="suggestline">Bạn có thể thích:</p>
+				<div class="suggest-wrapper">
+                               		<img class="suggest" src="img/itemthumb/item (4).png" alt="" onclick="popup2()">
+                                	<img class="suggest" src="img/itemthumb/item (5).png" alt="" onclick="popup3()">
+                                	<img class="suggest" src="img/itemthumb/item (6).png" alt="" onclick="popup4()">
+                                	<img class="suggest" src="img/itemthumb/item (7).png" alt="" onclick="popup5()">
+                                	<img class="suggest" src="img/itemthumb/item (8).png" alt="" onclick="popup6()">
+				</div>
+                        </div>
+                </div>
+        </div>
+
+<div class="popup" id="popup-2">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (4).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">CROISSANT</p>
+	<p class="popup-subtitle">Bánh sừng bò - [BR212]</p>
+	<p class="popup-description">Xốp và giòn rụm với tầng tầng lớp lớp bột mỏng tang, béo ngậy và thơm phức vị bơ.
+<br>
+	<br>Đơn giá: <span class="price">14 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus2()">+</button>
+	<input type="number" name="idisplay" id="idisplay2" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus2()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart2(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (5).png" alt="" onclick="popup3()">
+	<img class="suggest" src="img/itemthumb/item (6).png" alt="" onclick="popup4()">
+	<img class="suggest" src="img/itemthumb/item (7).png" alt="" onclick="popup5()">
+	<img class="suggest" src="img/itemthumb/item (8).png" alt="" onclick="popup6()">
+	<img class="suggest" src="img/itemthumb/item (9).png" alt="" onclick="popup7()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-3">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (5).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">BAGUETTE</p>
+	<p class="popup-subtitle">Bánh mì Pháp - [BR213]</p>
+	<p class="popup-description">Những ổ bánh có màu vàng bắt mắt, vỏ giòn rụm và ruột mềm dẻo. Nên ăn ngay khi còn nóng hổi.
+<br>
+	<br>Đơn giá: <span class="price">12 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus3()">+</button>
+	<input type="number" name="idisplay" id="idisplay3" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus3()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart3(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (6).png" alt="" onclick="popup4()">
+	<img class="suggest" src="img/itemthumb/item (7).png" alt="" onclick="popup5()">
+	<img class="suggest" src="img/itemthumb/item (8).png" alt="" onclick="popup6()">
+	<img class="suggest" src="img/itemthumb/item (9).png" alt="" onclick="popup7()">
+	<img class="suggest" src="img/itemthumb/item (10).png" alt="" onclick="popup8()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-4">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (6).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">BAGEL</p>
+	<p class="popup-subtitle">Bánh mì vòng - [BR214]</p>
+	<p class="popup-description">Dày đặc và dai ngon, có thể kết hợp với ngũ cốc để có hương vị thơm ngon tuyệt hảo.
+<br>
+	<br>Đơn giá: <span class="price">8 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus4()">+</button>
+	<input type="number" name="idisplay" id="idisplay4" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus4()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart4(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (7).png" alt="" onclick="popup5()">
+	<img class="suggest" src="img/itemthumb/item (8).png" alt="" onclick="popup6()">
+	<img class="suggest" src="img/itemthumb/item (9).png" alt="" onclick="popup7()">
+	<img class="suggest" src="img/itemthumb/item (10).png" alt="" onclick="popup8()">
+	<img class="suggest" src="img/itemthumb/item (11).png" alt="" onclick="popup9()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-5">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (7).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">PRETZEL</p>
+	<p class="popup-subtitle">Bánh quy xoắn - [BR215]</p>
+	<p class="popup-description">Món bánh này chắc chắn sẽ làm hài lòng những vị khách khi tới nhà bạn hoặc rất phù hợp nếu bạn đóng gói để mang tặng bạn bè, người thân.
+<br>
+	<br>Đơn giá: <span class="price">7 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus5()">+</button>
+	<input type="number" name="idisplay" id="idisplay5" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus5()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart5(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (8).png" alt="" onclick="popup6()">
+	<img class="suggest" src="img/itemthumb/item (9).png" alt="" onclick="popup7()">
+	<img class="suggest" src="img/itemthumb/item (10).png" alt="" onclick="popup8()">
+	<img class="suggest" src="img/itemthumb/item (11).png" alt="" onclick="popup9()">
+	<img class="suggest" src="img/itemthumb/item (12).png" alt="" onclick="popup10()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-6">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (8).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">WHITE BREAD</p>
+	<p class="popup-subtitle">Bánh mì trắng - [BR216]</p>
+	<p class="popup-description">Đơn giản như chính cái tên của nó, bánh mì trắng là một món ăn nhanh rất phù hợp với những người bận rộn. Ngon hơn khi phết bơ.
+<br>
+	<br>Đơn giá: <span class="price">15 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus6()">+</button>
+	<input type="number" name="idisplay" id="idisplay6" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus6()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart6(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (9).png" alt="" onclick="popup7()">
+	<img class="suggest" src="img/itemthumb/item (10).png" alt="" onclick="popup8()">
+	<img class="suggest" src="img/itemthumb/item (11).png" alt="" onclick="popup9()">
+	<img class="suggest" src="img/itemthumb/item (12).png" alt="" onclick="popup10()">
+	<img class="suggest" src="img/itemthumb/item (13).png" alt="" onclick="popup11()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-7">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (9).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">SAIGON BAGUETTE</p>
+	<p class="popup-subtitle">Bánh mì Sài Gòn - [BR217]</p>
+	<p class="popup-description">Phong phú từ kích thước đến mùi vị, sẽ luôn làm hài lòng với những khẩu vị khó tính nhất. Bánh mì Sài Gòn - Cà phê sữa đá là combo kinh điển đấy nhé!
+<br>
+	<br>Đơn giá: <span class="price">5 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus7()">+</button>
+	<input type="number" name="idisplay" id="idisplay7" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus7()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart7(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (10).png" alt="" onclick="popup8()">
+	<img class="suggest" src="img/itemthumb/item (11).png" alt="" onclick="popup9()">
+	<img class="suggest" src="img/itemthumb/item (12).png" alt="" onclick="popup10()">
+	<img class="suggest" src="img/itemthumb/item (13).png" alt="" onclick="popup11()">
+	<img class="suggest" src="img/itemthumb/item (14).png" alt="" onclick="popup12()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-8">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (10).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">TORTILLA</p>
+	<p class="popup-subtitle">Bánh Tortilla Mexico - [BR218]</p>
+	<p class="popup-description">Nét ẩm thực độc đáo của ẩm thực Mexico được khôi phục nguyên bản và không kém phần thú vị!
+<br>
+	<br>Đơn giá: <span class="price">18 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus8()">+</button>
+	<input type="number" name="idisplay" id="idisplay8" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus8()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart8(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (11).png" alt="" onclick="popup9()">
+	<img class="suggest" src="img/itemthumb/item (12).png" alt="" onclick="popup10()">
+	<img class="suggest" src="img/itemthumb/item (13).png" alt="" onclick="popup11()">
+	<img class="suggest" src="img/itemthumb/item (14).png" alt="" onclick="popup12()">
+	<img class="suggest" src="img/itemthumb/item (3).png" alt="" onclick="popup1()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-9">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (11).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">CHALLAH</p>
+	<p class="popup-subtitle">Bánh mì trứng Do Thái - [BR219]</p>
+	<p class="popup-description">Bánh ruột mềm, thường được làm vào ngày lễ Xaba của người Do Thái. Đặc biệt, Challah không làm bằng sữa, bơ mà thay bằng đó là nước, mật ong hay mật mía, dầu ăn.
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus9()">+</button>
+	<input type="number" name="idisplay" id="idisplay9" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus9()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart9(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (12).png" alt="" onclick="popup10()">
+	<img class="suggest" src="img/itemthumb/item (13).png" alt="" onclick="popup11()">
+	<img class="suggest" src="img/itemthumb/item (14).png" alt="" onclick="popup12()">
+	<img class="suggest" src="img/itemthumb/item (3).png" alt="" onclick="popup1()">
+	<img class="suggest" src="img/itemthumb/item (4).png" alt="" onclick="popup2()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-10">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (12).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">KAYA</p>
+	<p class="popup-subtitle">Bánh mì nướng Kaya - [BR21A]</p>
+	<p class="popup-description">Vô cùng hấp dẫn vì có mùi lá dứa bên trong hòa quyện với vị béo ngậy của trứng, sữa và mứt Kaya tạo nên hương vị khó cưỡng.
+<br>
+	<br>Đơn giá: <span class="price">15 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus10()">+</button>
+	<input type="number" name="idisplay" id="idisplay10" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus10()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart10(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (13).png" alt="" onclick="popup11()">
+	<img class="suggest" src="img/itemthumb/item (14).png" alt="" onclick="popup12()">
+	<img class="suggest" src="img/itemthumb/item (3).png" alt="" onclick="popup1()">
+	<img class="suggest" src="img/itemthumb/item (4).png" alt="" onclick="popup2()">
+	<img class="suggest" src="img/itemthumb/item (5).png" alt="" onclick="popup3()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-11">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (13).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">HAMBURGER</p>
+	<p class="popup-subtitle">Bánh Hamburger - [BR21B]</p>
+	<p class="popup-description">Bạn là một người thích hamburger và đang đi tìm công thức đơn giản lại ngon tuyệt đỉnh thì đây chính là nơi mà bạn đang tìm kiếm.
+<br>
+	<br>Đơn giá: <span class="price">18 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus11()">+</button>
+	<input type="number" name="idisplay" id="idisplay11" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus11()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart11(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (14).png" alt="" onclick="popup12()">
+	<img class="suggest" src="img/itemthumb/item (3).png" alt="" onclick="popup1()">
+	<img class="suggest" src="img/itemthumb/item (4).png" alt="" onclick="popup2()">
+	<img class="suggest" src="img/itemthumb/item (5).png" alt="" onclick="popup3()">
+	<img class="suggest" src="img/itemthumb/item (6).png" alt="" onclick="popup4()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-12">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (14).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">KEBAB</p>
+	<p class="popup-subtitle">Bánh mì Thổ Nhĩ Kỳ - [BR21C]</p>
+	<p class="popup-description">Thơm ngon lại rất tiện lợi, Kebab đã lan rộng khắp các nước và có nhiều “phiên bản” cùng mùi vị và cách chế biến độc đáo.
+<br>
+	<br>Đơn giá: <span class="price">15 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus12()">+</button>
+	<input type="number" name="idisplay" id="idisplay12" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus12()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart12(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (3).png" alt="" onclick="popup1()">
+	<img class="suggest" src="img/itemthumb/item (4).png" alt="" onclick="popup2()">
+	<img class="suggest" src="img/itemthumb/item (5).png" alt="" onclick="popup3()">
+	<img class="suggest" src="img/itemthumb/item (6).png" alt="" onclick="popup4()">
+	<img class="suggest" src="img/itemthumb/item (7).png" alt="" onclick="popup5()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-13">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (19).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">CHOUX À LA CRÈME</p>
+	<p class="popup-subtitle">Bánh Su kem - [PS211]</p>
+	<p class="popup-description">Nhỏ nhỏ xinh xinh, hương vị thơm ngon, béo ngậy và ngọt mát.
+<br>
+	<br>Đơn giá: <span class="price">5 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus13()">+</button>
+	<input type="number" name="idisplay" id="idisplay13" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus13()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart13(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (15).png" alt="" onclick="popup14()">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-14">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (15).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">CHEESECAKE</p>
+	<p class="popup-subtitle">Bánh kem - [PS212]</p>
+	<p class="popup-description">Đặt ngay để có được một chiếc bánh sinh nhật thú vị với phong cách hoàn toàn độc nhất.
+<br>
+	<br>Đơn giá: <span class="price">180 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus14()">+</button>
+	<input type="number" name="idisplay" id="idisplay14" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus14()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart14(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+	<img class="suggest" src="img/itemthumb/item (19).png" alt="" onclick="popup13()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-15">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (17).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">MACARON</p>
+	<p class="popup-subtitle">Bánh Macaron - [PS213]</p>
+	<p class="popup-description">Bạn có biết rằng trong một mẻ macaron khoảng 10 cái, thì chỉ có khoảng 5 - 6 cái là còn "sống sót" để mà lên tới kệ bánh không?
+<br>
+	<br>Đơn giá: <span class="price">25 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus15()">+</button>
+	<input type="number" name="idisplay" id="idisplay15" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus15()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart15(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+	<img class="suggest" src="img/itemthumb/item (19).png" alt="" onclick="popup13()">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-16">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (20).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">PANCAKE</p>
+	<p class="popup-subtitle">Bánh Kếp - [PS214]</p>
+	<p class="popup-description">Bánh kếp thường được nhiều người xem là lựa chọn lý tưởng cho bữa sáng hoặc các bữa ăn nhẹ vì có cách làm đơn giản và nhanh chóng.
+<br>
+	<br>Đơn giá: <span class="price">12 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus16()">+</button>
+	<input type="number" name="idisplay" id="idisplay16" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus16()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart16(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+	<img class="suggest" src="img/itemthumb/item (19).png" alt="" onclick="popup13()">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-17">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (18).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">TIRAMISU</p>
+	<p class="popup-subtitle">Bánh Tiramisu - [PS215]</p>
+	<p class="popup-description">Là sự kết hợp hài hòa của rượu Rhum, café và cacao, pha thêm vị béo của kem, phô mai cùng trứng, "Tiramisu" theo tiếng Ý có nghĩa là “Hãy mang em đi”.
+<br>
+	<br>Đơn giá: <span class="price">65 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus17()">+</button>
+	<input type="number" name="idisplay" id="idisplay17" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus17()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart17(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+	<img class="suggest" src="img/itemthumb/item (19).png" alt="" onclick="popup13()">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-18">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (16).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title">CUPCAKE</p>
+	<p class="popup-subtitle">Cupcake - [PS216]</p>
+	<p class="popup-description">Loại bánh kem thu nhỏ, không nhân hoặc nhân ngọt, cốt bánh thường nhẹ, mềm, vị ngọt tan và có lớp bông kem phía trên.
+<br>
+	<br>Đơn giá: <span class="price">27 000 VND/cái</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus18()">+</button>
+	<input type="number" name="idisplay" id="idisplay18" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus18()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart18(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (19).png" alt="" onclick="popup13()">
+	<img class="suggest" src="img/itemthumb/item (17).png" alt="" onclick="popup15()">
+	<img class="suggest" src="img/itemthumb/item (20).png" alt="" onclick="popup16()">
+	<img class="suggest" src="img/itemthumb/item (18).png" alt="" onclick="popup17()">
+	<img class="suggest" src="img/itemthumb/item (16).png" alt="" onclick="popup18()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-19">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (22).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">CHANH BẠC HÀ</p>
+	<p class="popup-subtitle">[DR211]</p>
+	<p class="popup-description">	Nguyên liệu chính: Chanh, đường, lá bạc hà.
+				<br>	- Có thể uống nóng hoặc đá.
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus19()">+</button>
+	<input type="number" name="idisplay" id="idisplay19" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus19()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart19(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (23).png" alt="" onclick="popup20()">
+	<img class="suggest" src="img/itemthumb/item (24).png" alt="" onclick="popup21()">
+	<img class="suggest" src="img/itemthumb/item (25).png" alt="" onclick="popup22()">
+	<img class="suggest" src="img/itemthumb/item (26).png" alt="" onclick="popup23()">
+	<img class="suggest" src="img/itemthumb/item (27).png" alt="" onclick="popup24()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-20">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (23).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">MOCKTAIL COCHINCHIN</p>
+	<p class="popup-subtitle">[DR212]</p>
+	<p class="popup-description">	Nguyên liệu chính: Cam vàng, chanh, đường, gấc syrup.
+<br>
+	<br>Đơn giá: <span class="price">35 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus20()">+</button>
+	<input type="number" name="idisplay" id="idisplay20" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus20()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart20(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (24).png" alt="" onclick="popup21()">
+	<img class="suggest" src="img/itemthumb/item (25).png" alt="" onclick="popup22()">
+	<img class="suggest" src="img/itemthumb/item (26).png" alt="" onclick="popup23()">
+	<img class="suggest" src="img/itemthumb/item (27).png" alt="" onclick="popup24()">
+	<img class="suggest" src="img/itemthumb/item (28).png" alt="" onclick="popup25()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-21">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (24).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">SMOOTHIE DÂU TÂY</p>
+	<p class="popup-subtitle">[DR213]</p>
+	<p class="popup-description">	Nguyên liệu chính: Dâu đỏ, dâu đen, đá.
+<br>
+	<br>Đơn giá: <span class="price">27 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus21()">+</button>
+	<input type="number" name="idisplay" id="idisplay21" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus21()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart21(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (25).png" alt="" onclick="popup22()">
+	<img class="suggest" src="img/itemthumb/item (26).png" alt="" onclick="popup23()">
+	<img class="suggest" src="img/itemthumb/item (27).png" alt="" onclick="popup24()">
+	<img class="suggest" src="img/itemthumb/item (28).png" alt="" onclick="popup25()">
+	<img class="suggest" src="img/itemthumb/item (1).png" alt="" onclick="popup26()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-22">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (25).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">SODA TẮC LẠNH</p>
+	<p class="popup-subtitle">[DR214]</p>
+	<p class="popup-description">	Nguyên liệu chính: Soda, tắc, đường.
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus22()">+</button>
+	<input type="number" name="idisplay" id="idisplay22" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus22()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart22(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (26).png" alt="" onclick="popup23()">
+	<img class="suggest" src="img/itemthumb/item (27).png" alt="" onclick="popup24()">
+	<img class="suggest" src="img/itemthumb/item (28).png" alt="" onclick="popup25()">
+	<img class="suggest" src="img/itemthumb/item (1).png" alt="" onclick="popup26()">
+	<img class="suggest" src="img/itemthumb/item (2).png" alt="" onclick="popup27()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-23">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (26).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">CAPPUCCINO</p>
+	<p class="popup-subtitle">[DR215]</p>
+	<p class="popup-description">	Nguyên liệu chính: Cà phê espresso, sữa nóng, sữa sủi bọt.
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus23()">+</button>
+	<input type="number" name="idisplay" id="idisplay23" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus23()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart23(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (27).png" alt="" onclick="popup24()">
+	<img class="suggest" src="img/itemthumb/item (28).png" alt="" onclick="popup25()">
+	<img class="suggest" src="img/itemthumb/item (1).png" alt="" onclick="popup26()">
+	<img class="suggest" src="img/itemthumb/item (2).png" alt="" onclick="popup27()">
+	<img class="suggest" src="img/itemthumb/item (21).png" alt="" onclick="popup28()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-24">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (27).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">TRÀ HOA CÚC</p>
+	<p class="popup-subtitle">[DR216]</p>
+	<p class="popup-description">	Nguyên liệu chính: Hoa cúc khô, táo đỏ khô, kỷ tử, đường phèn.
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus24()">+</button>
+	<input type="number" name="idisplay" id="idisplay24" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus24()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart24(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (28).png" alt="" onclick="popup25()">
+	<img class="suggest" src="img/itemthumb/item (1).png" alt="" onclick="popup26()">
+	<img class="suggest" src="img/itemthumb/item (2).png" alt="" onclick="popup27()">
+	<img class="suggest" src="img/itemthumb/item (21).png" alt="" onclick="popup28()">
+	<img class="suggest" src="img/itemthumb/item (22).png" alt="" onclick="popup19()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-25">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (28).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">DÂU ĐEN CHANH ĐÀO</p>
+	<p class="popup-subtitle">[DR217]</p>
+	<p class="popup-description">	Nguyên liệu chính: Chanh đào, dâu đen.
+<br>
+	<br>Đơn giá: <span class="price">27 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus25()">+</button>
+	<input type="number" name="idisplay" id="idisplay25" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus25()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart25(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (1).png" alt="" onclick="popup26()">
+	<img class="suggest" src="img/itemthumb/item (2).png" alt="" onclick="popup27()">
+	<img class="suggest" src="img/itemthumb/item (21).png" alt="" onclick="popup28()">
+	<img class="suggest" src="img/itemthumb/item (22).png" alt="" onclick="popup19()">
+	<img class="suggest" src="img/itemthumb/item (23).png" alt="" onclick="popup20()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-26">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (1).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">MOJITO PHÚC BỒN TỬ</p>
+	<p class="popup-subtitle">[DR218]</p>
+	<p class="popup-description">	Nguyên liệu chính: Phúc bồn tử.
+<br>
+	<br>Đơn giá: <span class="price">25 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus26()">+</button>
+	<input type="number" name="idisplay" id="idisplay26" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus26()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart26(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (2).png" alt="" onclick="popup27()">
+	<img class="suggest" src="img/itemthumb/item (21).png" alt="" onclick="popup28()">
+	<img class="suggest" src="img/itemthumb/item (22).png" alt="" onclick="popup19()">
+	<img class="suggest" src="img/itemthumb/item (23).png" alt="" onclick="popup20()">
+	<img class="suggest" src="img/itemthumb/item (24).png" alt="" onclick="popup21()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-27">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (2).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">TRÀ THẢO MỘC</p>
+	<p class="popup-subtitle">[DR219]</p>
+	<p class="popup-description">	Nguyên liệu chính: Trà xanh, quế chi, hương thảo, táo đỏ...
+<br>
+	<br>Đơn giá: <span class="price">22 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus27()">+</button>
+	<input type="number" name="idisplay" id="idisplay27" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus27()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart27(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (21).png" alt="" onclick="popup28()">
+	<img class="suggest" src="img/itemthumb/item (22).png" alt="" onclick="popup19()">
+	<img class="suggest" src="img/itemthumb/item (23).png" alt="" onclick="popup20()">
+	<img class="suggest" src="img/itemthumb/item (24).png" alt="" onclick="popup21()">
+	<img class="suggest" src="img/itemthumb/item (25).png" alt="" onclick="popup22()">
+</div>
+</div>
+</div>
+</div>
+
+<div class="popup" id="popup-28">
+<div class="popup-item">
+<button name="popup-close" onclick="exit()">X</button>
+<div class="popup-thumb">
+	<img src="img/itemthumb/item (21).png" alt="">
+</div>
+<div class="popup-content">
+	<p class="popup-title popup-title-2row">CHOCOLATE ICE BLEND</p>
+	<p class="popup-subtitle">[DR21A]</p>
+	<p class="popup-description">	Nguyên liệu chính: Chocolate, đá, syrup.
+<br>
+	<br>Đơn giá: <span class="price">32 000 VND/ly</span></p>
+<div class="popup-action">
+	<button type="submit" name="detail-plus" onclick="detailplus28()">+</button>
+	<input type="number" name="idisplay" id="idisplay28" value="0">
+	<button type="submit" name="detail-minus" onclick="detailminus28()">---</button>
+	<button type="submit" name="addtocart" onclick="addToCart28(this)">THÊM VÀO GIỎ</button>
+<button type="submit" name="cta" onclick="popupcart()">
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+</button>
+</div>
+<p class="suggestline">Bạn có thể thích:</p>
+<div class="suggest-wrapper">
+	<img class="suggest" src="img/itemthumb/item (22).png" alt="" onclick="popup19()">
+	<img class="suggest" src="img/itemthumb/item (23).png" alt="" onclick="popup20()">
+	<img class="suggest" src="img/itemthumb/item (24).png" alt="" onclick="popup21()">
+	<img class="suggest" src="img/itemthumb/item (25).png" alt="" onclick="popup22()">
+	<img class="suggest" src="img/itemthumb/item (26).png" alt="" onclick="popup23()">
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="container-fluid">
+	<div class="background-depth">
+		<div class="row">
+		<div id="fixed-navigation">
+			<div class="fixed-brand"><img src="img/logo.png" alt="logo"></div>
+			<div class="fixed-menu" id="fixed-sec0"><a href="#">TRANG CHỦ</a></div>
+			<div class="fixed-menu" id="fixed-sec1"><a href="#sec1s">BÁNH MÌ</a></div>
+			<div class="fixed-menu" id="fixed-sec2"><a href="#sec2">BÁNH NGỌT</a></div>
+			<div class="fixed-menu" id="fixed-sec3"><a href="#sec3">THỨC UỐNG</a></div>
+			<div class="fixed-menu" id="fixed-sec4"><a href="#sec4">LIÊN HỆ</a></div>
+			<div class="fixed-cta">	
+				<button type="submit" name="cta" onclick="popupcart()">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				</button>
+			</div>
+
+		</div>
+		</div>
+		<div class="row" id="navigation">
+			<div class="col-md-1 nothing-to-adjust-1"></div>
+			<div class="col-md-4 col-xs-12 menu">
+				<div class="menu-placement">
+					<div class="menu-item"><a href="#">TRANG CHỦ</a></div>
+					<div class="menu-item"><a href="#sec1s">BÁNH MÌ</a></div>
+					<div class="menu-item"><a href="#sec2">BÁNH NGỌT</a></div>
+					<div class="menu-item"><a href="#sec3">THỨC UỐNG</a></div>
+					<div class="menu-item"><a href="#sec4">LIÊN HỆ</a></div>
+				</div>
+			</div>
+
+			<div class="col-md-2 col-xs-12 logo">
+				<div class="logo-holder">
+					<img src="img/logo-original.png" alt="logo">
+				</div>
+			</div>
+			
+			<div class="col-md-4 col-xs-12 rightbar">
+				<div class="rightbar-placement">
+					<div class="searchform">
+						<form>
+      							<input type="text" placeholder="Hôm nay bạn tìm gì .." name="search">
+							<div id="search-button-holder">
+      							<button type="submit" name="item-search" onclick="searchSubmit()">
+									<i class="fa fa-search"></i>
+								</button>
+							</div>
+    						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1 nothing-to-adjust-2"></div>
+		</div>
+		
+
+
+
+		<div class="row" id="sh">
+			<div class="col-sm-12" id="showdown">
+					<img src="img/parallax/1.png" id="parallax-1" alt="">
+					<img src="img/parallax/2.png" id="parallax-2" alt="">
+					<img src="img/parallax/3.png" id="parallax-3" alt="">
+					<img src="img/parallax/4.png" id="parallax-4" alt="">
+					<img src="img/parallax/5.png" id="parallax-5" alt="">
+					<img src="img/parallax/6.png" id="parallax-6" alt="">
+					<img src="img/parallax/7.png" id="parallax-7" alt="">
+					<img src="img/parallax/8.png" id="parallax-8" alt="">
+
+
+					<img src="img/parallax/shadow1.png" id="parallax-shadow1" alt="">
+					<img src="img/parallax/shadow2.png" id="parallax-shadow2" alt="">
+					<img src="img/parallax/shadow3.png" id="parallax-shadow3" alt="">
+					<img src="img/parallax/shadow4.png" id="parallax-shadow4" alt="">
+					<img src="img/parallax/shadow5.png" id="parallax-shadow5" alt="">
+					<img src="img/parallax/shadow6.png" id="parallax-shadow6" alt="">
+					<img src="img/parallax/shadow7.png" id="parallax-shadow7" alt="">
+					<img src="img/parallax/shadow8.png" id="parallax-shadow8" alt="">
+
+				<div id="punch-line">
+					<p id="punch-title"><span>C</span>ROISSANT</p>
+					<svg viewBox="0 0 450 50">
+						<text y="50">CROISSANT</text>
+					</svg>
+					<p id="punch-text">BÁNH SỪNG BÒ (danh từ): luôn đi chung với tính từ "đỉnh của chóp"!</p>
+					<button type="submit" name="cta" onclick="window.location.href='#sec1s'" id="sec1s">XEM THÊM</button>
+				</div>
+			</div>
+		</div>
+		
+
+
+
+
+			
+		<div class="row" id="sec1">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-2">
+				<div class="section-name"><p>BÁNH MÌ</p></div>
+			</div>
+			<div class="col-sm-5"></div>
+		</div>
+		<div class="row">
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-1">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (3).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CREAM BUN</h3>
+									<h4>Bánh bơ sữa nhỏ</h4>
+									<p>Với phần vỏ ngoài giòn vừa đủ bao lấy phần nhân bơ thơm mịn ở bên trong một cách hoàn hảo, chắc chắn chỉ ngửi mùi thôi sẽ khiến bạn không thể nào chối từ!</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup1()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-2">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (4).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CROISSANT</h3>
+									<h4>Bánh sừng bò</h4>
+									<p>Xốp và giòn rụm với tầng tầng lớp lớp bột mỏng tang, béo ngậy và thơm phức vị bơ.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup2()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-3">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (5).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>BAGUETTE</h3>
+									<h4>Bánh mì Pháp</h4>
+									<p>Những ổ bánh có màu vàng bắt mắt, vỏ giòn rụm và ruột mềm dẻo. Nên ăn ngay khi còn nóng hổi.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup3()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-4">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (6).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>BAGEL</h3>
+									<h4>Bánh mì vòng</h4>
+									<p>Dày đặc và dai ngon, có thể kết hợp với ngũ cốc để có hương vị thơm ngon tuyệt hảo.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup4()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-5">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (7).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>PRETZEL</h3>
+									<h4>Bánh quy xoắn</h4>
+									<p>Món bánh này chắc chắn sẽ làm hài lòng những vị khách khi tới nhà bạn hoặc rất phù hợp nếu bạn đóng gói để mang tặng bạn bè, người thân.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup5()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-6">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (8).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>WHITE BREAD</h3>
+									<h4>Bánh mì trắng</h4>
+									<p>Đơn giản như chính cái tên của nó, bánh mì trắng là một món ăn nhanh rất phù hợp với những người bận rộn. Ngon hơn khi phết bơ.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup6()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-7">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (9).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>SAIGON BAGUETTE</h3>
+									<h4>Bánh mì Sài Gòn</h4>
+									<p>Phong phú từ kích thước đến mùi vị, sẽ luôn làm hài lòng với những khẩu vị khó tính nhất. Bánh mì Sài Gòn - Cà phê sữa đá là combo kinh điển đấy nhé!</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup7()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-8">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (10).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>TORTILLA</h3>
+									<h4>Bánh Tortilla Mexico</h4>
+									<p>Nét ẩm thực độc đáo của ẩm thực Mexico được khôi phục nguyên bản và không kém phần thú vị!</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup8()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-9">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (11).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CHALLAH</h3>
+									<h4>Bánh mì trứng Do Thái</h4>
+									<p>Bánh ruột mềm, thường được làm vào ngày lễ Xaba của người Do Thái. Đặc biệt, Challah không làm bằng sữa, bơ mà thay bằng đó là nước, mật ong hay mật mía, dầu ăn.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup9()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-10">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (12).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>KAYA</h3>
+									<h4>Bánh mì nướng Kaya</h4>
+									<p>Vô cùng hấp dẫn vì có mùi lá dứa bên trong hòa quyện với vị béo ngậy của trứng, sữa và mứt Kaya tạo nên hương vị khó cưỡng.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup10()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12" id="col-11">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (13).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>HAMBURGER</h3>
+									<h4>Bánh Hamburger</h4>
+									<p>Bạn là một người thích loại hamburger đơn giản lại ngon tuyệt đỉnh thì đây chính là điều mà bạn đang tìm kiếm.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup11()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-xs-12 col-even" id="col-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (14).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>KEBAB</h3>
+									<h4>Bánh mì Thổ Nhĩ Kỳ</h4>
+									<p>Thơm ngon lại rất tiện lợi, Kebab đã lan rộng khắp các nước và có nhiều “phiên bản” cùng mùi vị và cách chế biến độc đáo.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup12()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+		</div><!--row item-->
+
+
+
+
+
+
+
+
+
+
+
+		<div class="row" id="sec2">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-2">
+				<div class="section-name"><p>BÁNH NGỌT</p></div>
+			</div>
+			<div class="col-sm-5"></div>
+		</div>
+		<div class="row">
+			
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (19).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CHOUX À LA CRÈME</h3>
+									<h4>Bánh Su kem</h4>
+									<p>Nhỏ nhỏ xinh xinh, hương vị thơm ngon, béo ngậy và ngọt mát.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup13()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (15).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CHEESECAKE</h3>
+									<h4>Bánh Kem</h4>
+									<p>Liên hệ để có ngay một chiếc bánh sinh nhật độc đáo với phong cách không nơi nào khác có được.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup14()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (17).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>MACARON</h3>
+									<h4>Bánh Macaron</h4>
+									<p>Bạn có biết rằng trong một mẻ macaron khoảng 10 cái, thì chỉ có khoảng 5 - 6 cái là còn "sống sót" để mà lên tới kệ bánh không?</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup15()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (20).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>PANCAKE</h3>
+									<h4>Bánh Kếp</h4>
+									<p> Bánh kếp thường được nhiều người xem là lựa chọn lý tưởng cho bữa sáng hoặc các bữa ăn nhẹ vì có cách làm đơn giản và nhanh chóng.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup16()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (18).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>TIRAMISU</h3>
+									<h4>Bánh Tiramisu</h4>
+									<p>Là sự kết hợp hài hòa của rượu Rum, café và cacao, pha thêm vị béo của kem, phô mai cùng trứng, "Tiramisu" theo tiếng Ý có nghĩa là “Hãy mang em đi”.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup17()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			<div class="col-xl-4 col-sm-6 col-xs-12">
+				<div class="item">
+					<div class="flip-card">
+						<div class="flip-card-inner">
+							<div class="flip-card-front">
+								<div class="thumbnail">
+									<img src="img/itemthumb/item (16).png" alt="bread">
+								</div>
+							</div>
+						    	<div class="flip-card-back">
+								<div class="item-content">
+									<h3>CUPCAKE</h3>
+									<h4>Cupcake</h4>
+									<p>Loại bánh kem thu nhỏ, không nhân hoặc nhân ngọt, cốt bánh thường nhẹ, mềm, vị ngọt tan và có lớp bông kem phía trên.</p>
+									<div class="item-more"><button type="submit" name="cta" onclick="popup18()">CHI TIẾT</button></div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+				</div>
+			</div>
+			
+			
+			
+		</div><!--row-->
+
+
+
+
+
+
+
+
+
+
+
+		<div class="row" id="sec3">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-2">
+				<div class="section-name"><p>THỨC UỐNG</p></div>
+			</div>
+			<div class="col-sm-5"></div>
+		</div>
+
+		
+		
+		<div class="row">
+			<div id="drink-carousel">
+				<div id="drink-list">
+					<div class="drink-item" id="drnkbtn-1">
+						<button class="drnkbtn" onclick="popup19()" id="firstbtn">CHANH BẠC HÀ</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-2">
+						<button class="drnkbtn" onclick="popup20()">MOCKTAIL COCHINCHIN</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-3">
+						<button class="drnkbtn" onclick="popup21()">SMOOTHIE DÂU TÂY</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-4">
+						<button class="drnkbtn" onclick="popup22()">SODA TẮC LẠNH</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-5">
+						<button class="drnkbtn" onclick="popup23()">CAPPUCCINO</button>
+					</div>
+
+					<div class="drink-item" id="drnkbtn-6">
+						<button class="drnkbtn" onclick="popup24()">TRÀ HOA CÚC</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-7">
+						<button class="drnkbtn" onclick="popup25()">DÂU ĐEN CHANH ĐÀO</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-8">
+						<button class="drnkbtn" onclick="popup26()">MOJITO PHÚC BỒN TỬ</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-9">
+						<button class="drnkbtn" onclick="popup27()">TRÀ THẢO MỘC</button>
+					</div>
+					<div class="drink-item" id="drnkbtn-10">
+						<button class="drnkbtn" onclick="popup28()">CHOCOLATE ICE BLEND</button>
+					</div>
+				</div>
+				
+				<div class="drink-thumbnail">
+					<img class="dr-thumb" id="dr-thumb-1" src="img/itemthumb/item (22) id.png" alt="drink" style="z-index: 1;">
+					<img class="dr-thumb" id="dr-thumb-2" src="img/itemthumb/item (23) id.png" alt="drink" style="z-index: 2;">
+					<img class="dr-thumb" id="dr-thumb-3" src="img/itemthumb/item (24) id.png" alt="drink" style="z-index: 3;">
+					<img class="dr-thumb" id="dr-thumb-4" src="img/itemthumb/item (25) id.png" alt="drink" style="z-index: 4;">
+					<img class="dr-thumb" id="dr-thumb-5" src="img/itemthumb/item (26) id.png" alt="drink" style="z-index: 5;">
+					<img class="dr-thumb" id="dr-thumb-6" src="img/itemthumb/item (27) id.png" alt="drink" style="z-index: 6;">
+					<img class="dr-thumb" id="dr-thumb-7" src="img/itemthumb/item (28) id.png" alt="drink" style="z-index: 7;">
+					<img class="dr-thumb" id="dr-thumb-8" src="img/itemthumb/item (1) id.png" alt="drink" style="z-index: 8;">
+					<img class="dr-thumb" id="dr-thumb-9" src="img/itemthumb/item (2) id.png" alt="drink" style="z-index: 9;">
+					<img class="dr-thumb" id="dr-thumb-10" src="img/itemthumb/item (21) id.png" alt="drink" style="z-index: 10;">
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="row" id="sec4">
+			<div class="col-sm-5"></div>
+			<div class="col-sm-2"><div class="section-name"><p>LIÊN HỆ</p></div></div>
+			<div class="col-sm-5"></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 info">
+				<div class="info-logo">
+					<img src="img/logo-portrait.png" alt="logo">
+				</div>
+				<div class="info-text">
+					<p>
+						<span style=""><strong>CTY TNHH BUNNY</strong></span>
+						<br>
+						<br>229 Xô Viết Nghệ Tĩnh
+						<br>P. 17 - Q. BÌNH THẠNH
+						<br>
+						<br>contact@bunnybakery.com
+						<br><br>
+						<a href=""><i class="fa fa-facebook-square"></i></a>
+						<a href=""><i class="fa fa-instagram"></i></a>
+						<a href=""><i class="fa fa-youtube-square"></i></a>
+					</p>
+					
+				</div>
+			</div>
+			<div class="col-sm-7 contact">
+				<div class="my-contact-form">
+					<input type="text" placeholder="Tên bạn" name="user-name">
+					<input type="text" placeholder="E-mail hoặc số điện thoại" name="user-contact">
+					<input type="text" placeholder="Địa chỉ (cho đặt hàng)" name="user-address">
+					<input type="text" placeholder="Nội dung" name="text-field">
+					<button type="submit" name="contact-send" onclick="contactSubmit()">GỬI ĐI</button>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+
+
+
+
+		<div class="row">
+			<div class="col-sm-12 footer">
+				<p>BUNNY BAKERY      &copy;      2021</p>
+				<a href="#"><img src="img/icon-uptop.png" alt="uptop"></a>
+			</div>
+		</div>
+
+
+	</div><!--background-depth-->
+	</div><!--container-fluid-->
+
+
+
+
+<script>
+function contactSubmit() {
+  alert("Xin cảm ơn! Thông tin của bạn đã được gửi!");
+}
+</script>
+<script>
+function searchSubmit() {
+  alert("Xin lỗi! Chúng tôi không thể tìm thấy kết quả bạn đang tìm!");
+}
+	function checkoutconfirm() {
+		alert("Xin cảm ơn! Đơn hàng của bạn đã được gửi!");
+	}
+</script>
+
+<script type="text/javascript">
+	
+	let layer1 = document.getElementById("parallax-1");
+	let layer2 = document.getElementById("parallax-2");
+	let layer3 = document.getElementById("parallax-3");
+	let layer4 = document.getElementById("parallax-4");
+	let layer5 = document.getElementById("parallax-5");
+	let layer6 = document.getElementById("parallax-6");
+	let layer7 = document.getElementById("parallax-7");
+	let layer8 = document.getElementById("parallax-8");
+	
+	
+	let shadow1 = document.getElementById("parallax-shadow1");
+	let shadow2 = document.getElementById("parallax-shadow2");
+	let shadow3 = document.getElementById("parallax-shadow3");
+	let shadow4 = document.getElementById("parallax-shadow4");
+	let shadow5 = document.getElementById("parallax-shadow5");
+	let shadow6 = document.getElementById("parallax-shadow6");
+	let shadow7 = document.getElementById("parallax-shadow7");
+	let shadow8 = document.getElementById("parallax-shadow8");
+
+
+	window.addEventListener('scroll', function(){
+		var value = window.scrollY;
+
+		layer1.style.left 	= -	value * 2	 + 'px';
+		shadow1.style.left 	= -	value * 2	 + 'px';
+		layer2.style.left 	= -	value * 1.5	 + 'px';
+		shadow2.style.left 	= -	value * 1.5	 + 'px';
+		layer3.style.left 	= -	value * 1	 + 'px';
+		shadow3.style.left 	= -	value * 1	 + 'px';
+		layer4.style.left 	= -	value * 0.3	 + 'px';
+		shadow4.style.left 	= -	value * 0.3	 + 'px';
+		layer5.style.left 	= 	value * 0.6	 + 'px';
+		shadow5.style.left 	= 	value * 0.6	 + 'px';
+		layer6.style.left 	= 	value * 1.2	 + 'px';
+		shadow6.style.left 	= 	value * 1.2	 + 'px';
+		layer7.style.left 	= 	value * 1.6	 + 'px';
+		shadow7.style.left 	= 	value * 1.6	 + 'px';
+		layer8.style.left 	= 	value * 2	 + 'px';
+		shadow8.style.left 	= 	value * 2	 + 'px';
+
+
+	})
+
+</script>
+
+
+<script type="text/javascript">
+
+window.addEventListener("resize", function() {
+
+
+	let item1 = document.getElementById("col-1");
+	let item2 = document.getElementById("col-2");
+	let item3 = document.getElementById("col-3");
+	let item4 = document.getElementById("col-4");
+	let item5 = document.getElementById("col-5");
+	let item6 = document.getElementById("col-6");
+	let item7 = document.getElementById("col-7");
+	let item8 = document.getElementById("col-8");
+	let item9 = document.getElementById("col-9");
+	let item10 = document.getElementById("col-10");
+	let item11 = document.getElementById("col-11");
+	let item12 = document.getElementById("col-12");
+
+	let scrn = window.innerHeight;
+
+
+
+	if (window.matchMedia("(min-width: 992px)").matches) {
+
+		window.addEventListener('scroll', function(){
+			var value = window.scrollY;
+
+			item2.style.top 	= - 	value * 0.2	+0.2*scrn + 'px';
+			item4.style.top 	= -	value * 0.2	+0.2*scrn + 'px';
+			item6.style.top 	= -	value * 0.2	+0.2*scrn + 'px';
+			item8.style.top 	= -	value * 0.2	+0.2*scrn + 'px';
+			item10.style.top 	= -	value * 0.2	+0.2*scrn + 'px';
+			item12.style.top 	= -	value * 0.2	+0.2*scrn + 'px';
+
+		})
+	} else {
+
+		window.addEventListener('scroll', function(){
+			var value = window.scrollY;
+
+			item2.style.top 	= 0 + 'px';
+			item4.style.top 	= 0 + 'px';
+			item6.style.top 	= 0 + 'px';
+			item8.style.top 	= 0 + 'px';
+			item10.style.top 	= 0 + 'px';
+			item12.style.top 	= 0 + 'px';
+
+		})
+	}
+});
+	
+
+
+</script>
+
+
+<script>
+	window.onscroll = function() {mystickyFunction(),mySectionFunction()};
+
+	var navbar = document.getElementById("fixed-navigation");
+	var sticky = navbar.offsetTop;
+	let navbar2 = document.getElementById("fixed-navigation");
+
+	function mystickyFunction() {
+		var sticky2 = navbar2.offsetTop + 120;
+  		if (window.pageYOffset > sticky2) {
+    			navbar.classList.add("sticky");
+  		}
+		else {
+    			navbar.classList.remove("sticky");
+  		}
+	}
+
+	var fiseZero = document.getElementById("fixed-sec0");
+	var fiseOne = document.getElementById("fixed-sec1");
+	var fiseTwo = document.getElementById("fixed-sec2");
+	var fiseThree = document.getElementById("fixed-sec3");
+	var fiseFour = document.getElementById("fixed-sec4");
+
+	var secOne = document.getElementById("sec1");
+	var secTwo = document.getElementById("sec2");
+	var secThree = document.getElementById("sec3");
+	var secFour = document.getElementById("sec4");
+
+
+	var fiseZeroA = fiseZero.getElementsByTagName("A");
+	var fiseOneA = fiseOne.getElementsByTagName("A");
+	var fiseTwoA = fiseTwo.getElementsByTagName("A");
+	var fiseThreeA = fiseThree.getElementsByTagName("A");
+	var fiseFourA = fiseFour.getElementsByTagName("A");
+
+	function mySectionFunction() {
+		var secOneOS = secOne.offsetTop - 150;
+		var secTwoOS = secTwo.offsetTop - 50;
+		var secThreeOS = secThree.offsetTop - 50;
+		var secFourOS = secFour.offsetTop - 400;
+		if (window.pageYOffset < secOneOS) {
+    			fiseZero.classList.add("secBGchange");
+    			fiseZeroA[0].classList.add("secAchange");
+  		}
+		else {
+    			fiseZero.classList.remove("secBGchange");
+    			fiseZeroA[0].classList.remove("secAchange");
+  		}
+  		if (window.pageYOffset > secOneOS && window.pageYOffset < secTwoOS) {
+    			fiseOne.classList.add("secBGchange");
+    			fiseOneA[0].classList.add("secAchange");
+  		}
+		else {
+    			fiseOne.classList.remove("secBGchange");
+    			fiseOneA[0].classList.remove("secAchange");
+  		}
+  		if (window.pageYOffset > secTwoOS && window.pageYOffset < secThreeOS) {
+    			fiseTwo.classList.add("secBGchange");
+    			fiseTwoA[0].classList.add("secAchange");
+  		}
+		else {
+    			fiseTwo.classList.remove("secBGchange");
+    			fiseTwoA[0].classList.remove("secAchange");
+  		}
+  		if (window.pageYOffset > secThreeOS && window.pageYOffset < secFourOS) {
+    			fiseThree.classList.add("secBGchange");
+    			fiseThreeA[0].classList.add("secAchange");
+  		}
+		else {
+    			fiseThree.classList.remove("secBGchange");
+    			fiseThreeA[0].classList.remove("secAchange");
+  		}
+  		if (window.pageYOffset > secFourOS) {
+    			fiseFour.classList.add("secBGchange");
+    			fiseFourA[0].classList.add("secAchange");
+  		}
+		else {
+    			fiseFour.classList.remove("secBGchange");
+    			fiseFourA[0].classList.remove("secAchange");
+  		}
+	}
+
+</script>
+
+
+<script>
+
+$(function() {
+  $('#drnkbtn-1').hover(function() {
+    $('#dr-thumb-1').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-1').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-2').hover(function() {
+    $('#dr-thumb-2').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-2').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-3').hover(function() {
+    $('#dr-thumb-3').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-3').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-4').hover(function() {
+    $('#dr-thumb-4').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-4').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-5').hover(function() {
+    $('#dr-thumb-5').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-5').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-6').hover(function() {
+    $('#dr-thumb-6').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-6').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-7').hover(function() {
+    $('#dr-thumb-7').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-7').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-8').hover(function() {
+    $('#dr-thumb-8').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-8').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-9').hover(function() {
+    $('#dr-thumb-9').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-9').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+$(function() {
+  $('#drnkbtn-10').hover(function() {
+    $('#dr-thumb-10').css('transform', 'translate(-50%,-50%)');
+  }, function() {
+    $('#dr-thumb-10').css('transform', 'translate(200%,-50%)');
+  });
+});
+
+</script>
+
+
+
+<script>
+	$(function() {
+    		$("#firstbtn").addClass("drnkbtn-active")
+		$("#dr-thumb-1").addClass("dr-thumb-active")
+    		$(".drnkbtn").mousemove(function() {
+      			$("#firstbtn").removeClass("drnkbtn-active")
+      			$("#dr-thumb-1").removeClass("dr-thumb-active");
+    		});
+		$(".drink-item").mousemove(function() {
+      			$("#firstbtn").removeClass("drnkbtn-active")
+      			$("#dr-thumb-1").removeClass("dr-thumb-active");
+    		});
+	});
+</script>
+
+<script>
+
+
+	function backcheckout(){
+    		$("#popup-checkout").removeClass("popup-pop-checkout");
+	};
+	function exitcheckout(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-cart").removeClass("popup-pop-cart");
+    		$("#popup-checkout").removeClass("popup-pop-checkout");
+	};
+	function popupcheckout(){
+    		$("#popup-checkout").addClass("popup-pop-checkout");
+	};
+
+	function backcart(){
+    		$("#popup-cart").removeClass("popup-pop-cart");
+	};
+	function exitcart(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-cart").removeClass("popup-pop-cart");
+	};
+	function popupcart(){
+    		$("#popup-cart").addClass("popup-pop-cart");
+	};
+
+
+	function exit(){
+    		$(".popup").removeClass("popup-pop");
+	};
+
+	function popup1(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-1").addClass("popup-pop");
+	};
+	function popup2(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-2").addClass("popup-pop");
+	};
+	function popup3(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-3").addClass("popup-pop");
+	};
+	function popup4(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-4").addClass("popup-pop");
+	};
+	function popup5(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-5").addClass("popup-pop");
+	};
+
+	function popup6(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-6").addClass("popup-pop");
+	};
+	function popup7(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-7").addClass("popup-pop");
+	};
+	function popup8(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-8").addClass("popup-pop");
+	};
+	function popup9(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-9").addClass("popup-pop");
+	};
+	function popup10(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-10").addClass("popup-pop");
+	};
+
+	function popup11(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-11").addClass("popup-pop");
+	};
+	function popup12(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-12").addClass("popup-pop");
+	};
+	function popup13(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-13").addClass("popup-pop");
+	};
+	function popup14(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-14").addClass("popup-pop");
+	};
+	function popup15(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-15").addClass("popup-pop");
+	};
+
+	function popup16(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-16").addClass("popup-pop");
+	};
+	function popup17(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-17").addClass("popup-pop");
+	};
+	function popup18(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-18").addClass("popup-pop");
+	};
+	function popup19(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-19").addClass("popup-pop");
+	};
+	function popup20(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-20").addClass("popup-pop");
+	};
+
+	function popup21(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-21").addClass("popup-pop");
+	};
+	function popup22(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-22").addClass("popup-pop");
+	};
+	function popup23(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-23").addClass("popup-pop");
+	};
+	function popup24(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-24").addClass("popup-pop");
+	};
+	function popup25(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-25").addClass("popup-pop");
+	};
+
+	function popup26(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-26").addClass("popup-pop");
+	};
+	function popup27(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-27").addClass("popup-pop");
+	};
+	function popup28(){
+    		$(".popup").removeClass("popup-pop");
+    		$("#popup-28").addClass("popup-pop");
+	};
+
+</script>
+
+
+<div class="loader">
+    <img src="img/bunmaking-3ms.gif" alt="load-anim">
+</div>
+
+
+<script>
+        $(window).on("load",function(){
+          $(".loader").fadeOut(1000);
+        });
+    </script>
+
+
+<script>
+    function detailplus1(){
+        document.getElementById("idisplay1").value++;
+        document.getElementById("cartdisplay1").value++;
+	subcal1();
+	totalcal();
+    }
+    function detailminus1(){
+      if (document.getElementById("idisplay1").value > 0) {
+        document.getElementById("idisplay1").value--;
+	subcal1();
+	totalcal();
+      }
+	if (document.getElementById("cartdisplay1").value > 0) {
+        document.getElementById("cartdisplay1").value--;
+      } 
+    }
+
+    function detailplus2(){ document.getElementById("idisplay2").value++; document.getElementById("cartdisplay2").value++; subcal2();totalcal();}
+    function detailminus2(){
+	if (document.getElementById("idisplay2").value > 0) { document.getElementById("idisplay2").value--; subcal2();totalcal();}
+	if (document.getElementById("cartdisplay2").value > 0) { document.getElementById("cartdisplay2").value--;} }
+
+    function detailplus3(){ document.getElementById("idisplay3").value++; document.getElementById("cartdisplay3").value++; subcal3();totalcal();}
+    function detailminus3(){
+	if (document.getElementById("idisplay3").value > 0) { document.getElementById("idisplay3").value--; subcal3();totalcal();}
+	if (document.getElementById("cartdisplay3").value > 0) { document.getElementById("cartdisplay3").value--;} }
+
+    function detailplus4(){ document.getElementById("idisplay4").value++; document.getElementById("cartdisplay4").value++; subcal4();totalcal();}
+    function detailminus4(){
+	if (document.getElementById("idisplay4").value > 0) { document.getElementById("idisplay4").value--; subcal4();totalcal();}
+	if (document.getElementById("cartdisplay4").value > 0) { document.getElementById("cartdisplay4").value--;} }
+
+    function detailplus5(){ document.getElementById("idisplay5").value++; document.getElementById("cartdisplay5").value++; subcal5();totalcal();}
+    function detailminus5(){
+	if (document.getElementById("idisplay5").value > 0) { document.getElementById("idisplay5").value--; subcal5();totalcal();}
+	if (document.getElementById("cartdisplay5").value > 0) { document.getElementById("cartdisplay5").value--;} }
+
+    function detailplus6(){ document.getElementById("idisplay6").value++; document.getElementById("cartdisplay6").value++; subcal6();totalcal();}
+    function detailminus6(){
+	if (document.getElementById("idisplay6").value > 0) { document.getElementById("idisplay6").value--; subcal6();totalcal();}
+	if (document.getElementById("cartdisplay6").value > 0) { document.getElementById("cartdisplay6").value--;} }
+
+    function detailplus7(){ document.getElementById("idisplay7").value++; document.getElementById("cartdisplay7").value++; subcal7();totalcal();}
+    function detailminus7(){
+	if (document.getElementById("idisplay7").value > 0) { document.getElementById("idisplay7").value--; subcal7();totalcal();}
+	if (document.getElementById("cartdisplay7").value > 0) { document.getElementById("cartdisplay7").value--;} }
+
+    function detailplus8(){ document.getElementById("idisplay8").value++; document.getElementById("cartdisplay8").value++; subcal8();totalcal();}
+    function detailminus8(){
+	if (document.getElementById("idisplay8").value > 0) { document.getElementById("idisplay8").value--; subcal8();totalcal();}
+	if (document.getElementById("cartdisplay8").value > 0) { document.getElementById("cartdisplay8").value--;} }
+
+    function detailplus9(){ document.getElementById("idisplay9").value++; document.getElementById("cartdisplay9").value++; subcal9();totalcal();}
+    function detailminus9(){
+	if (document.getElementById("idisplay9").value > 0) { document.getElementById("idisplay9").value--; subcal9();totalcal();}
+	if (document.getElementById("cartdisplay9").value > 0) { document.getElementById("cartdisplay9").value--;} }
+
+    function detailplus10(){ document.getElementById("idisplay10").value++; document.getElementById("cartdisplay10").value++; subcal10();totalcal();}
+    function detailminus10(){
+	if (document.getElementById("idisplay10").value > 0) { document.getElementById("idisplay10").value--; subcal10();totalcal();}
+	if (document.getElementById("cartdisplay10").value > 0) { document.getElementById("cartdisplay10").value--; } }
+
+    function detailplus11(){ document.getElementById("idisplay11").value++; document.getElementById("cartdisplay11").value++; subcal11();totalcal();}
+    function detailminus11(){
+	if (document.getElementById("idisplay11").value > 0) { document.getElementById("idisplay11").value--; subcal11();totalcal();}
+	if (document.getElementById("cartdisplay11").value > 0) { document.getElementById("cartdisplay11").value--; } }
+
+    function detailplus12(){ document.getElementById("idisplay12").value++; document.getElementById("cartdisplay12").value++; subcal12();totalcal();}
+    function detailminus12(){
+	if (document.getElementById("idisplay12").value > 0) { document.getElementById("idisplay12").value--; subcal12();totalcal();}
+	if (document.getElementById("cartdisplay12").value > 0) { document.getElementById("cartdisplay12").value--; } }
+
+    function detailplus13(){ document.getElementById("idisplay13").value++; document.getElementById("cartdisplay13").value++; subcal13();totalcal();}
+    function detailminus13(){
+	if (document.getElementById("idisplay13").value > 0) { document.getElementById("idisplay13").value--; subcal13();totalcal();}
+	if (document.getElementById("cartdisplay13").value > 0) { document.getElementById("cartdisplay13").value--; } }
+
+    function detailplus14(){ document.getElementById("idisplay14").value++; document.getElementById("cartdisplay14").value++; subcal14();totalcal();}
+    function detailminus14(){
+	if (document.getElementById("idisplay14").value > 0) { document.getElementById("idisplay14").value--; subcal14();totalcal();}
+	if (document.getElementById("cartdisplay14").value > 0) { document.getElementById("cartdisplay14").value--; } }
+
+    function detailplus15(){ document.getElementById("idisplay15").value++; document.getElementById("cartdisplay15").value++; subcal15();totalcal();}
+    function detailminus15(){
+	if (document.getElementById("idisplay15").value > 0) { document.getElementById("idisplay15").value--; subcal15();totalcal();}
+	if (document.getElementById("cartdisplay15").value > 0) { document.getElementById("cartdisplay15").value--; } }
+
+    function detailplus16(){ document.getElementById("idisplay16").value++; document.getElementById("cartdisplay16").value++; subcal16();totalcal();}
+    function detailminus16(){
+	if (document.getElementById("idisplay16").value > 0) { document.getElementById("idisplay16").value--; subcal16();totalcal();}
+	if (document.getElementById("cartdisplay16").value > 0) { document.getElementById("cartdisplay16").value--; } }
+
+    function detailplus17(){ document.getElementById("idisplay17").value++; document.getElementById("cartdisplay17").value++; subcal17();totalcal();}
+    function detailminus17(){
+	if (document.getElementById("idisplay17").value > 0) { document.getElementById("idisplay17").value--; subcal17();totalcal();}
+	if (document.getElementById("cartdisplay17").value > 0) { document.getElementById("cartdisplay17").value--; } }
+
+    function detailplus18(){ document.getElementById("idisplay18").value++; document.getElementById("cartdisplay18").value++; subcal18();totalcal();}
+    function detailminus18(){
+	if (document.getElementById("idisplay18").value > 0) { document.getElementById("idisplay18").value--; subcal18();totalcal();}
+	if (document.getElementById("cartdisplay18").value > 0) { document.getElementById("cartdisplay18").value--; } }
+
+    function detailplus19(){ document.getElementById("idisplay19").value++; document.getElementById("cartdisplay19").value++; subcal19();totalcal();}
+    function detailminus19(){
+	if (document.getElementById("idisplay19").value > 0) { document.getElementById("idisplay19").value--; subcal19();totalcal();}
+	if (document.getElementById("cartdisplay19").value > 0) { document.getElementById("cartdisplay19").value--; } }
+
+    function detailplus20(){ document.getElementById("idisplay20").value++; document.getElementById("cartdisplay20").value++; subcal20();totalcal();}
+    function detailminus20(){
+	if (document.getElementById("idisplay20").value > 0) { document.getElementById("idisplay20").value--; subcal20();totalcal();}
+	if (document.getElementById("cartdisplay20").value > 0) { document.getElementById("cartdisplay20").value--; } }
+
+    function detailplus21(){ document.getElementById("idisplay21").value++; document.getElementById("cartdisplay21").value++; subcal21();totalcal();}
+    function detailminus21(){
+	if (document.getElementById("idisplay21").value > 0) { document.getElementById("idisplay21").value--; subcal21();totalcal();}
+	if (document.getElementById("cartdisplay21").value > 0) { document.getElementById("cartdisplay21").value--; } }
+
+    function detailplus22(){ document.getElementById("idisplay22").value++; document.getElementById("cartdisplay22").value++; subcal22();totalcal();}
+    function detailminus22(){
+	if (document.getElementById("idisplay22").value > 0) { document.getElementById("idisplay22").value--; subcal22();totalcal();}
+	if (document.getElementById("cartdisplay22").value > 0) { document.getElementById("cartdisplay22").value--; } }
+
+    function detailplus23(){ document.getElementById("idisplay23").value++; document.getElementById("cartdisplay23").value++; subcal23();totalcal();}
+    function detailminus23(){
+	if (document.getElementById("idisplay23").value > 0) { document.getElementById("idisplay23").value--; subcal23();totalcal();}
+	if (document.getElementById("cartdisplay23").value > 0) { document.getElementById("cartdisplay23").value--; } }
+
+    function detailplus24(){ document.getElementById("idisplay24").value++; document.getElementById("cartdisplay24").value++; subcal24();totalcal();}
+    function detailminus24(){
+	if (document.getElementById("idisplay24").value > 0) { document.getElementById("idisplay24").value--; subcal24();totalcal();}
+	if (document.getElementById("cartdisplay24").value > 0) { document.getElementById("cartdisplay24").value--; } }
+
+    function detailplus25(){ document.getElementById("idisplay25").value++; document.getElementById("cartdisplay25").value++; subcal25();totalcal();}
+    function detailminus25(){
+	if (document.getElementById("idisplay25").value > 0) { document.getElementById("idisplay25").value--; subcal25();totalcal();}
+	if (document.getElementById("cartdisplay25").value > 0) { document.getElementById("cartdisplay25").value--; } }
+
+    function detailplus26(){ document.getElementById("idisplay26").value++; document.getElementById("cartdisplay26").value++; subcal26();totalcal();}
+    function detailminus26(){
+	if (document.getElementById("idisplay26").value > 0) { document.getElementById("idisplay26").value--; subcal26();totalcal();}
+	if (document.getElementById("cartdisplay26").value > 0) { document.getElementById("cartdisplay26").value--; } }
+
+    function detailplus27(){ document.getElementById("idisplay27").value++; document.getElementById("cartdisplay27").value++; subcal27();totalcal();}
+    function detailminus27(){
+	if (document.getElementById("idisplay27").value > 0) { document.getElementById("idisplay27").value--; subcal27();totalcal();}
+	if (document.getElementById("cartdisplay27").value > 0) { document.getElementById("cartdisplay27").value--; } }
+
+    function detailplus28(){ document.getElementById("idisplay28").value++; document.getElementById("cartdisplay28").value++; subcal28();totalcal();}
+    function detailminus28(){
+	if (document.getElementById("idisplay28").value > 0) { document.getElementById("idisplay28").value--; subcal28();totalcal();}
+	if (document.getElementById("cartdisplay28").value > 0) { document.getElementById("cartdisplay28").value--; } }
+
+
+
+
+
+
+
+    function cartplus2(){ document.getElementById("idisplay2").value++; document.getElementById("cartdisplay2").value++; subcal2();totalcal();}
+    function cartminus2(){
+	if (document.getElementById("idisplay2").value > 0) { document.getElementById("idisplay2").value--;}
+	if (document.getElementById("cartdisplay2").value > 0) { document.getElementById("cartdisplay2").value--; subcal2();totalcal();} }
+
+    function cartplus3(){ document.getElementById("idisplay3").value++; document.getElementById("cartdisplay3").value++; subcal3();totalcal();}
+    function cartminus3(){
+	if (document.getElementById("idisplay3").value > 0) { document.getElementById("idisplay3").value--;}
+	if (document.getElementById("cartdisplay3").value > 0) { document.getElementById("cartdisplay3").value--;} }
+
+    function cartplus4(){ document.getElementById("idisplay4").value++; document.getElementById("cartdisplay4").value++; subcal4();totalcal();}
+    function cartminus4(){
+	if (document.getElementById("idisplay4").value > 0) { document.getElementById("idisplay4").value--;}
+	if (document.getElementById("cartdisplay4").value > 0) { document.getElementById("cartdisplay4").value--; subcal4();totalcal();} }
+
+    function cartplus5(){ document.getElementById("idisplay5").value++; document.getElementById("cartdisplay5").value++; subcal5();totalcal();}
+    function cartminus5(){
+	if (document.getElementById("idisplay5").value > 0) { document.getElementById("idisplay5").value--;}
+	if (document.getElementById("cartdisplay5").value > 0) { document.getElementById("cartdisplay5").value--; subcal5();totalcal();} }
+
+    function cartplus6(){ document.getElementById("idisplay6").value++; document.getElementById("cartdisplay6").value++; subcal6();totalcal();}
+    function cartminus6(){
+	if (document.getElementById("idisplay6").value > 0) { document.getElementById("idisplay6").value--;}
+	if (document.getElementById("cartdisplay6").value > 0) { document.getElementById("cartdisplay6").value--; subcal6();totalcal();} }
+
+    function cartplus7(){ document.getElementById("idisplay7").value++; document.getElementById("cartdisplay7").value++; subcal7();totalcal();}
+    function cartminus7(){
+	if (document.getElementById("idisplay7").value > 0) { document.getElementById("idisplay7").value--;}
+	if (document.getElementById("cartdisplay7").value > 0) { document.getElementById("cartdisplay7").value--; subcal7();totalcal();} }
+
+    function cartplus8(){ document.getElementById("idisplay8").value++; document.getElementById("cartdisplay8").value++; subcal8();totalcal();}
+    function cartminus8(){
+	if (document.getElementById("idisplay8").value > 0) { document.getElementById("idisplay8").value--;}
+	if (document.getElementById("cartdisplay8").value > 0) { document.getElementById("cartdisplay8").value--; subcal8();totalcal();} }
+
+    function cartplus9(){ document.getElementById("idisplay9").value++; document.getElementById("cartdisplay9").value++; subcal9();totalcal();}
+    function cartminus9(){
+	if (document.getElementById("idisplay9").value > 0) { document.getElementById("idisplay9").value--;}
+	if (document.getElementById("cartdisplay9").value > 0) { document.getElementById("cartdisplay9").value--; subcal9();totalcal();} }
+
+    function cartplus10(){ document.getElementById("idisplay10").value++; document.getElementById("cartdisplay10").value++; subcal10();totalcal();}
+    function cartminus10(){
+	if (document.getElementById("idisplay10").value > 0) { document.getElementById("idisplay10").value--;}
+	if (document.getElementById("cartdisplay10").value > 0) { document.getElementById("cartdisplay10").value--; subcal10();totalcal();} }
+
+    function cartplus11(){ document.getElementById("idisplay11").value++; document.getElementById("cartdisplay11").value++; subcal11();totalcal();}
+    function cartminus11(){
+	if (document.getElementById("idisplay11").value > 0) { document.getElementById("idisplay11").value--;}
+	if (document.getElementById("cartdisplay11").value > 0) { document.getElementById("cartdisplay11").value--; subcal11();totalcal();} }
+
+    function cartplus12(){ document.getElementById("idisplay12").value++; document.getElementById("cartdisplay12").value++; subcal12();totalcal();}
+    function cartminus12(){
+	if (document.getElementById("idisplay12").value > 0) { document.getElementById("idisplay12").value--;}
+	if (document.getElementById("cartdisplay12").value > 0) { document.getElementById("cartdisplay12").value--; subcal12();totalcal();} }
+
+    function cartplus13(){ document.getElementById("idisplay13").value++; document.getElementById("cartdisplay13").value++; subcal13();totalcal();}
+    function cartminus13(){
+	if (document.getElementById("idisplay13").value > 0) { document.getElementById("idisplay13").value--;}
+	if (document.getElementById("cartdisplay13").value > 0) { document.getElementById("cartdisplay13").value--; subcal13();totalcal();} }
+
+    function cartplus14(){ document.getElementById("idisplay14").value++; document.getElementById("cartdisplay14").value++; subcal14();totalcal();}
+    function cartminus14(){
+	if (document.getElementById("idisplay14").value > 0) { document.getElementById("idisplay14").value--;}
+	if (document.getElementById("cartdisplay14").value > 0) { document.getElementById("cartdisplay14").value--; subcal14();totalcal();} }
+
+    function cartplus15(){ document.getElementById("idisplay15").value++; document.getElementById("cartdisplay15").value++; subcal15();totalcal();}
+    function cartminus15(){
+	if (document.getElementById("idisplay15").value > 0) { document.getElementById("idisplay15").value--;}
+	if (document.getElementById("cartdisplay15").value > 0) { document.getElementById("cartdisplay15").value--; subcal15();totalcal();} }
+
+    function cartplus16(){ document.getElementById("idisplay16").value++; document.getElementById("cartdisplay16").value++; subcal16();totalcal();}
+    function cartminus16(){
+	if (document.getElementById("idisplay16").value > 0) { document.getElementById("idisplay16").value--;}
+	if (document.getElementById("cartdisplay16").value > 0) { document.getElementById("cartdisplay16").value--; subcal16();totalcal();} }
+
+    function cartplus17(){ document.getElementById("idisplay17").value++; document.getElementById("cartdisplay17").value++; subcal17();totalcal();}
+    function cartminus17(){
+	if (document.getElementById("idisplay17").value > 0) { document.getElementById("idisplay17").value--;}
+	if (document.getElementById("cartdisplay17").value > 0) { document.getElementById("cartdisplay17").value--; subcal17();totalcal();} }
+
+    function cartplus18(){ document.getElementById("idisplay18").value++; document.getElementById("cartdisplay18").value++; subcal18();totalcal();}
+    function cartminus18(){
+	if (document.getElementById("idisplay18").value > 0) { document.getElementById("idisplay18").value--;}
+	if (document.getElementById("cartdisplay18").value > 0) { document.getElementById("cartdisplay18").value--; subcal18();totalcal();} }
+
+    function cartplus19(){ document.getElementById("idisplay19").value++; document.getElementById("cartdisplay19").value++; subcal19();totalcal();}
+    function cartminus19(){
+	if (document.getElementById("idisplay19").value > 0) { document.getElementById("idisplay19").value--;}
+	if (document.getElementById("cartdisplay19").value > 0) { document.getElementById("cartdisplay19").value--; subcal19();totalcal();} }
+
+    function cartplus20(){ document.getElementById("idisplay20").value++; document.getElementById("cartdisplay20").value++; subcal20();totalcal();}
+    function cartminus20(){
+	if (document.getElementById("idisplay20").value > 0) { document.getElementById("idisplay20").value--;}
+	if (document.getElementById("cartdisplay20").value > 0) { document.getElementById("cartdisplay20").value--; subcal20();totalcal();} }
+
+    function cartplus21(){ document.getElementById("idisplay21").value++; document.getElementById("cartdisplay21").value++; subcal21();totalcal();}
+    function cartminus21(){
+	if (document.getElementById("idisplay21").value > 0) { document.getElementById("idisplay21").value--;}
+	if (document.getElementById("cartdisplay21").value > 0) { document.getElementById("cartdisplay21").value--; subcal21();totalcal();} }
+
+    function cartplus22(){ document.getElementById("idisplay22").value++; document.getElementById("cartdisplay22").value++; subcal22();totalcal();}
+    function cartminus22(){
+	if (document.getElementById("idisplay22").value > 0) { document.getElementById("idisplay22").value--;}
+	if (document.getElementById("cartdisplay22").value > 0) { document.getElementById("cartdisplay22").value--; subcal22();totalcal();} }
+
+    function cartplus23(){ document.getElementById("idisplay23").value++; document.getElementById("cartdisplay23").value++; subcal23();totalcal();}
+    function cartminus23(){
+	if (document.getElementById("idisplay23").value > 0) { document.getElementById("idisplay23").value--;}
+	if (document.getElementById("cartdisplay23").value > 0) { document.getElementById("cartdisplay23").value--; subcal23();totalcal();} }
+
+    function cartplus24(){ document.getElementById("idisplay24").value++; document.getElementById("cartdisplay24").value++; subcal24();totalcal();}
+    function cartminus24(){
+	if (document.getElementById("idisplay24").value > 0) { document.getElementById("idisplay24").value--;}
+	if (document.getElementById("cartdisplay24").value > 0) { document.getElementById("cartdisplay24").value--; subcal24();totalcal();} }
+
+    function cartplus25(){ document.getElementById("idisplay25").value++; document.getElementById("cartdisplay25").value++; subcal25();totalcal();}
+    function cartminus25(){
+	if (document.getElementById("idisplay25").value > 0) { document.getElementById("idisplay25").value--;}
+	if (document.getElementById("cartdisplay25").value > 0) { document.getElementById("cartdisplay25").value--; subcal25();totalcal();} }
+
+    function cartplus26(){ document.getElementById("idisplay26").value++; document.getElementById("cartdisplay26").value++; subcal26();totalcal();}
+    function cartminus26(){
+	if (document.getElementById("idisplay26").value > 0) { document.getElementById("idisplay26").value--;}
+	if (document.getElementById("cartdisplay26").value > 0) { document.getElementById("cartdisplay26").value--; subcal26();totalcal();} }
+
+    function cartplus27(){ document.getElementById("idisplay27").value++; document.getElementById("cartdisplay27").value++; subcal27();totalcal();}
+    function cartminus27(){
+	if (document.getElementById("idisplay27").value > 0) { document.getElementById("idisplay27").value--;}
+	if (document.getElementById("cartdisplay27").value > 0) { document.getElementById("cartdisplay27").value--; subcal27();totalcal();} }
+
+    function cartplus28(){ document.getElementById("idisplay28").value++; document.getElementById("cartdisplay28").value++; subcal28();totalcal();}
+    function cartminus28(){
+	if (document.getElementById("idisplay28").value > 0) { document.getElementById("idisplay28").value--;}
+	if (document.getElementById("cartdisplay28").value > 0) { document.getElementById("cartdisplay28").value--; subcal28();totalcal();} }
+
+
+
+
+
+	
+
+	function subcal1(){ var price1 = 8	; document.getElementById("subtotal1").value = price1 * 1000 * document.getElementById("idisplay1").value; }
+	function subcal2(){ var price2 = 14	; document.getElementById("subtotal2").value = price2 * 1000 * document.getElementById("idisplay2").value; }
+	function subcal3(){ var price3 = 12	; document.getElementById("subtotal3").value = price3 * 1000 * document.getElementById("idisplay3").value; }
+	function subcal4(){ var price4 = 8	; document.getElementById("subtotal4").value = price4 * 1000 * document.getElementById("idisplay4").value; }
+	function subcal5(){ var price5 = 7	; document.getElementById("subtotal5").value = price5 * 1000 * document.getElementById("idisplay5").value; }
+	function subcal6(){ var price6 = 15	; document.getElementById("subtotal6").value = price6 * 1000 * document.getElementById("idisplay6").value; }
+	function subcal7(){ var price7 = 5	; document.getElementById("subtotal7").value = price7 * 1000 * document.getElementById("idisplay7").value; }
+	function subcal8(){ var price8 = 18	; document.getElementById("subtotal8").value = price8 * 1000 * document.getElementById("idisplay8").value; }
+	function subcal9(){ var price9 = 22	; document.getElementById("subtotal9").value = price9 * 1000 * document.getElementById("idisplay9").value; }
+	function subcal10(){ var price10 = 15	; document.getElementById("subtotal10").value = price10 * 1000 * document.getElementById("idisplay10").value; }
+	function subcal11(){ var price11 = 18	; document.getElementById("subtotal11").value = price11 * 1000 * document.getElementById("idisplay11").value; }
+	function subcal12(){ var price12 = 15	; document.getElementById("subtotal12").value = price12 * 1000 * document.getElementById("idisplay12").value; }
+	function subcal13(){ var price13 = 5	; document.getElementById("subtotal13").value = price13 * 1000 * document.getElementById("idisplay13").value; }
+	function subcal14(){ var price14 = 180	; document.getElementById("subtotal14").value = price14 * 1000 * document.getElementById("idisplay14").value; }
+	function subcal15(){ var price15 = 25	; document.getElementById("subtotal15").value = price15 * 1000 * document.getElementById("idisplay15").value; }
+	function subcal16(){ var price16 = 12	; document.getElementById("subtotal16").value = price16 * 1000 * document.getElementById("idisplay16").value; }
+	function subcal17(){ var price17 = 65	; document.getElementById("subtotal17").value = price17 * 1000 * document.getElementById("idisplay17").value; }
+	function subcal18(){ var price18 = 27	; document.getElementById("subtotal18").value = price18 * 1000 * document.getElementById("idisplay18").value; }
+	function subcal19(){ var price19 = 22	; document.getElementById("subtotal19").value = price19 * 1000 * document.getElementById("idisplay19").value; }
+	function subcal20(){ var price20 = 35	; document.getElementById("subtotal20").value = price20 * 1000 * document.getElementById("idisplay20").value; }
+	function subcal21(){ var price21 = 27	; document.getElementById("subtotal21").value = price21 * 1000 * document.getElementById("idisplay21").value; }
+	function subcal22(){ var price22 = 22	; document.getElementById("subtotal22").value = price22 * 1000 * document.getElementById("idisplay22").value; }
+	function subcal23(){ var price23 = 22	; document.getElementById("subtotal23").value = price23 * 1000 * document.getElementById("idisplay23").value; }
+	function subcal24(){ var price24 = 22	; document.getElementById("subtotal24").value = price24 * 1000 * document.getElementById("idisplay24").value; }
+	function subcal25(){ var price25 = 27	; document.getElementById("subtotal25").value = price25 * 1000 * document.getElementById("idisplay25").value; }
+	function subcal26(){ var price26 = 25	; document.getElementById("subtotal26").value = price26 * 1000 * document.getElementById("idisplay26").value; }
+	function subcal27(){ var price27 = 22	; document.getElementById("subtotal27").value = price27 * 1000 * document.getElementById("idisplay27").value; }
+	function subcal28(){ var price28 = 32	; document.getElementById("subtotal28").value = price28 * 1000 * document.getElementById("idisplay28").value; }
+
+
+	function totalcal(){
+		
+		var price1 = 8;
+		var price2 = 14;
+		var price3 = 12;
+		var price4 = 8;
+		var price5 = 7;
+		var price6 = 15;
+		var price7 = 5;
+		var price8 = 18;
+		var price9 = 22;
+		var price10 = 15;
+		var price11 = 18;
+		var price12 = 15;
+		var price13 = 5;
+		var price14 = 180;
+		var price15 = 25;
+		var price16 = 12;
+		var price17 = 65;
+		var price18 = 27;
+		var price19 = 22;
+		var price20 = 35;
+		var price21 = 27;
+		var price22 = 22;
+		var price23 = 22;
+		var price24 = 22;
+		var price25 = 27;
+		var price26 = 25;
+		var price27 = 22;
+		var price28 = 32;
+
+		var subprice1 = document.getElementById("subtotal1").value;
+		var subprice2 = document.getElementById("subtotal2").value;
+		var subprice3 = document.getElementById("subtotal3").value;
+		var subprice4 = document.getElementById("subtotal4").value;
+		var subprice5 = document.getElementById("subtotal5").value;
+		var subprice6 = document.getElementById("subtotal6").value;
+		var subprice7 = document.getElementById("subtotal7").value;
+		var subprice8 = document.getElementById("subtotal8").value;
+		var subprice9 = document.getElementById("subtotal9").value;
+		var subprice10 = document.getElementById("subtotal10").value;
+		var subprice11 = document.getElementById("subtotal11").value;
+		var subprice12 = document.getElementById("subtotal12").value;
+		var subprice13 = document.getElementById("subtotal13").value;
+		var subprice14 = document.getElementById("subtotal14").value;
+		var subprice15 = document.getElementById("subtotal15").value;
+		var subprice16 = document.getElementById("subtotal16").value;
+		var subprice17 = document.getElementById("subtotal17").value;
+		var subprice18 = document.getElementById("subtotal18").value;
+		var subprice19 = document.getElementById("subtotal19").value;
+		var subprice20 = document.getElementById("subtotal20").value;
+		var subprice21 = document.getElementById("subtotal21").value;
+		var subprice22 = document.getElementById("subtotal22").value;
+		var subprice23 = document.getElementById("subtotal23").value;
+		var subprice24 = document.getElementById("subtotal24").value;
+		var subprice25 = document.getElementById("subtotal25").value;
+		var subprice26 = document.getElementById("subtotal26").value;
+		var subprice27 = document.getElementById("subtotal27").value;
+		var subprice28 = document.getElementById("subtotal28").value;
+
+		subprice1 = price1 * 1000 * document.getElementById("idisplay1").value;
+		subprice2 = price2 * 1000 * document.getElementById("idisplay2").value;
+		subprice3 = price3 * 1000 * document.getElementById("idisplay3").value;
+		subprice4 = price4 * 1000 * document.getElementById("idisplay4").value;
+		subprice5 = price5 * 1000 * document.getElementById("idisplay5").value;
+		subprice6 = price6 * 1000 * document.getElementById("idisplay6").value;
+		subprice7 = price7 * 1000 * document.getElementById("idisplay7").value;
+		subprice8 = price8 * 1000 * document.getElementById("idisplay8").value;
+		subprice9 = price9 * 1000 * document.getElementById("idisplay9").value;
+		subprice10 = price10 * 1000 * document.getElementById("idisplay10").value;
+		subprice11 = price11 * 1000 * document.getElementById("idisplay11").value;
+		subprice12 = price12 * 1000 * document.getElementById("idisplay12").value;
+		subprice13 = price13 * 1000 * document.getElementById("idisplay13").value;
+		subprice14 = price14 * 1000 * document.getElementById("idisplay14").value;
+		subprice15 = price15 * 1000 * document.getElementById("idisplay15").value;
+		subprice16 = price16 * 1000 * document.getElementById("idisplay16").value;
+		subprice17 = price17 * 1000 * document.getElementById("idisplay17").value;
+		subprice18 = price18 * 1000 * document.getElementById("idisplay18").value;
+		subprice19 = price19 * 1000 * document.getElementById("idisplay19").value;
+		subprice20 = price20 * 1000 * document.getElementById("idisplay20").value;
+		subprice21 = price21 * 1000 * document.getElementById("idisplay21").value;
+		subprice22 = price22 * 1000 * document.getElementById("idisplay22").value;
+		subprice23 = price23 * 1000 * document.getElementById("idisplay23").value;
+		subprice24 = price24 * 1000 * document.getElementById("idisplay24").value;
+		subprice25 = price25 * 1000 * document.getElementById("idisplay25").value;
+		subprice26 = price26 * 1000 * document.getElementById("idisplay26").value;
+		subprice27 = price27 * 1000 * document.getElementById("idisplay27").value;
+		subprice28 = price28 * 1000 * document.getElementById("idisplay28").value;
+
+		var total = 0;
+		document.getElementById("total").value = total + subprice1 + subprice2 + subprice3 + subprice4 + subprice5 + subprice6 + subprice7 + subprice8 + subprice9 + subprice10 + subprice11 + subprice12 + subprice13 + subprice14 + subprice15 + subprice16 + subprice17 + subprice18 + subprice19 + subprice20 + subprice21 + subprice22 + subprice23 + subprice24 + subprice25 + subprice26 + subprice27 + subprice28;
+	}
+
+</script>
+<script>
+	function itemremove1(){
+		$("#cart-item-1").addClass("cart-item-hidden");
+		$("#cart-item-1").addClass("cart-item-hidden-anim");
+	}
+	function itemremove2(){ $("#cart-item-2").addClass("cart-item-hidden"); $("#cart-item-2").addClass("cart-item-hidden-anim"); }
+	function itemremove3(){ $("#cart-item-3").addClass("cart-item-hidden"); $("#cart-item-3").addClass("cart-item-hidden-anim"); }
+	function itemremove4(){ $("#cart-item-4").addClass("cart-item-hidden"); $("#cart-item-4").addClass("cart-item-hidden-anim"); }
+	function itemremove5(){ $("#cart-item-5").addClass("cart-item-hidden"); $("#cart-item-5").addClass("cart-item-hidden-anim"); }
+	function itemremove6(){ $("#cart-item-6").addClass("cart-item-hidden"); $("#cart-item-6").addClass("cart-item-hidden-anim"); }
+	function itemremove7(){ $("#cart-item-7").addClass("cart-item-hidden"); $("#cart-item-7").addClass("cart-item-hidden-anim"); }
+	function itemremove8(){ $("#cart-item-8").addClass("cart-item-hidden"); $("#cart-item-8").addClass("cart-item-hidden-anim"); }
+	function itemremove9(){ $("#cart-item-9").addClass("cart-item-hidden"); $("#cart-item-9").addClass("cart-item-hidden-anim"); }
+	function itemremove10(){ $("#cart-item-10").addClass("cart-item-hidden"); $("#cart-item-10").addClass("cart-item-hidden-anim"); }
+	function itemremove11(){ $("#cart-item-11").addClass("cart-item-hidden"); $("#cart-item-11").addClass("cart-item-hidden-anim"); }
+	function itemremove12(){ $("#cart-item-12").addClass("cart-item-hidden"); $("#cart-item-12").addClass("cart-item-hidden-anim"); }
+	function itemremove13(){ $("#cart-item-13").addClass("cart-item-hidden"); $("#cart-item-13").addClass("cart-item-hidden-anim"); }
+	function itemremove14(){ $("#cart-item-14").addClass("cart-item-hidden"); $("#cart-item-14").addClass("cart-item-hidden-anim"); }
+	function itemremove15(){ $("#cart-item-15").addClass("cart-item-hidden"); $("#cart-item-15").addClass("cart-item-hidden-anim"); }
+	function itemremove16(){ $("#cart-item-16").addClass("cart-item-hidden"); $("#cart-item-16").addClass("cart-item-hidden-anim"); }
+	function itemremove17(){ $("#cart-item-17").addClass("cart-item-hidden"); $("#cart-item-17").addClass("cart-item-hidden-anim"); }
+	function itemremove18(){ $("#cart-item-18").addClass("cart-item-hidden"); $("#cart-item-18").addClass("cart-item-hidden-anim"); }
+	function itemremove19(){ $("#cart-item-19").addClass("cart-item-hidden"); $("#cart-item-19").addClass("cart-item-hidden-anim"); }
+	function itemremove20(){ $("#cart-item-20").addClass("cart-item-hidden"); $("#cart-item-20").addClass("cart-item-hidden-anim"); }
+	function itemremove21(){ $("#cart-item-21").addClass("cart-item-hidden"); $("#cart-item-21").addClass("cart-item-hidden-anim"); }
+	function itemremove22(){ $("#cart-item-22").addClass("cart-item-hidden"); $("#cart-item-22").addClass("cart-item-hidden-anim"); }
+	function itemremove23(){ $("#cart-item-23").addClass("cart-item-hidden"); $("#cart-item-23").addClass("cart-item-hidden-anim"); }
+	function itemremove24(){ $("#cart-item-24").addClass("cart-item-hidden"); $("#cart-item-24").addClass("cart-item-hidden-anim"); }
+	function itemremove25(){ $("#cart-item-25").addClass("cart-item-hidden"); $("#cart-item-25").addClass("cart-item-hidden-anim"); }
+	function itemremove26(){ $("#cart-item-26").addClass("cart-item-hidden"); $("#cart-item-26").addClass("cart-item-hidden-anim"); }
+	function itemremove27(){ $("#cart-item-27").addClass("cart-item-hidden"); $("#cart-item-27").addClass("cart-item-hidden-anim"); }
+	function itemremove28(){ $("#cart-item-28").addClass("cart-item-hidden"); $("#cart-item-28").addClass("cart-item-hidden-anim"); }
+
+	function addToCart1(el){
+		el.classList.remove("addtocartsuccessful");
+		void el.offsetWidth;
+		el.classList.add("addtocartsuccessful");
+
+		$("#cart-item-1").removeClass("cart-item-hidden-anim");
+		$("#cart-item-1").removeClass("cart-item-hidden");
+		$("#cart-item-1").addClass("cart-item-add");
+	}
+	function addToCart2(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-2").removeClass("cart-item-hidden-anim"); $("#cart-item-2").removeClass("cart-item-hidden"); $("#cart-item-2").addClass("cart-item-add"); }
+	function addToCart3(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-3").removeClass("cart-item-hidden-anim"); $("#cart-item-3").removeClass("cart-item-hidden"); $("#cart-item-3").addClass("cart-item-add"); }
+	function addToCart4(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-4").removeClass("cart-item-hidden-anim"); $("#cart-item-4").removeClass("cart-item-hidden"); $("#cart-item-4").addClass("cart-item-add"); }
+	function addToCart5(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-5").removeClass("cart-item-hidden-anim"); $("#cart-item-5").removeClass("cart-item-hidden"); $("#cart-item-5").addClass("cart-item-add"); }
+	function addToCart6(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-6").removeClass("cart-item-hidden-anim"); $("#cart-item-6").removeClass("cart-item-hidden"); $("#cart-item-6").addClass("cart-item-add"); }
+	function addToCart7(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-7").removeClass("cart-item-hidden-anim"); $("#cart-item-7").removeClass("cart-item-hidden"); $("#cart-item-7").addClass("cart-item-add"); }
+	function addToCart8(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-8").removeClass("cart-item-hidden-anim"); $("#cart-item-8").removeClass("cart-item-hidden"); $("#cart-item-8").addClass("cart-item-add"); }
+	function addToCart9(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-9").removeClass("cart-item-hidden-anim"); $("#cart-item-9").removeClass("cart-item-hidden"); $("#cart-item-9").addClass("cart-item-add"); }
+	function addToCart10(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-10").removeClass("cart-item-hidden-anim"); $("#cart-item-10").removeClass("cart-item-hidden"); $("#cart-item-10").addClass("cart-item-add"); }
+	function addToCart11(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-11").removeClass("cart-item-hidden-anim"); $("#cart-item-11").removeClass("cart-item-hidden"); $("#cart-item-11").addClass("cart-item-add"); }
+	function addToCart12(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-12").removeClass("cart-item-hidden-anim"); $("#cart-item-12").removeClass("cart-item-hidden"); $("#cart-item-12").addClass("cart-item-add"); }
+	function addToCart13(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-13").removeClass("cart-item-hidden-anim"); $("#cart-item-13").removeClass("cart-item-hidden"); $("#cart-item-13").addClass("cart-item-add"); }
+	function addToCart14(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-14").removeClass("cart-item-hidden-anim"); $("#cart-item-14").removeClass("cart-item-hidden"); $("#cart-item-14").addClass("cart-item-add"); }
+	function addToCart15(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-15").removeClass("cart-item-hidden-anim"); $("#cart-item-15").removeClass("cart-item-hidden"); $("#cart-item-15").addClass("cart-item-add"); }
+	function addToCart16(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-16").removeClass("cart-item-hidden-anim"); $("#cart-item-16").removeClass("cart-item-hidden"); $("#cart-item-16").addClass("cart-item-add"); }
+	function addToCart17(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-17").removeClass("cart-item-hidden-anim"); $("#cart-item-17").removeClass("cart-item-hidden"); $("#cart-item-17").addClass("cart-item-add"); }
+	function addToCart18(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-18").removeClass("cart-item-hidden-anim"); $("#cart-item-18").removeClass("cart-item-hidden"); $("#cart-item-18").addClass("cart-item-add"); }
+	function addToCart19(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-19").removeClass("cart-item-hidden-anim"); $("#cart-item-19").removeClass("cart-item-hidden"); $("#cart-item-19").addClass("cart-item-add"); }
+	function addToCart20(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-20").removeClass("cart-item-hidden-anim"); $("#cart-item-20").removeClass("cart-item-hidden"); $("#cart-item-20").addClass("cart-item-add"); }
+	function addToCart21(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-21").removeClass("cart-item-hidden-anim"); $("#cart-item-21").removeClass("cart-item-hidden"); $("#cart-item-21").addClass("cart-item-add"); }
+	function addToCart22(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-22").removeClass("cart-item-hidden-anim"); $("#cart-item-22").removeClass("cart-item-hidden"); $("#cart-item-22").addClass("cart-item-add"); }
+	function addToCart23(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-23").removeClass("cart-item-hidden-anim"); $("#cart-item-23").removeClass("cart-item-hidden"); $("#cart-item-23").addClass("cart-item-add"); }
+	function addToCart24(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-24").removeClass("cart-item-hidden-anim"); $("#cart-item-24").removeClass("cart-item-hidden"); $("#cart-item-24").addClass("cart-item-add"); }
+	function addToCart25(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-25").removeClass("cart-item-hidden-anim"); $("#cart-item-25").removeClass("cart-item-hidden"); $("#cart-item-25").addClass("cart-item-add"); }
+	function addToCart26(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-26").removeClass("cart-item-hidden-anim"); $("#cart-item-26").removeClass("cart-item-hidden"); $("#cart-item-26").addClass("cart-item-add"); }
+	function addToCart27(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-27").removeClass("cart-item-hidden-anim"); $("#cart-item-27").removeClass("cart-item-hidden"); $("#cart-item-27").addClass("cart-item-add"); }
+	function addToCart28(el){ el.classList.remove("addtocartsuccessful"); void el.offsetWidth; el.classList.add("addtocartsuccessful");
+		$("#cart-item-28").removeClass("cart-item-hidden-anim"); $("#cart-item-28").removeClass("cart-item-hidden"); $("#cart-item-28").addClass("cart-item-add"); }
+
+
+</script>
+</body>
+</html>
