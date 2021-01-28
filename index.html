@@ -4049,6 +4049,10 @@ $( document ).ready(function() {
           $("#firstbtn").removeClass("drnkbtn-active");
           $("#dr-thumb-1").removeClass("dr-thumb-active");
         });
+        $(".drink-item").mouseout(function(){
+          $("#firstbtn").addClass("drnkbtn-active");
+          $("#dr-thumb-1").addClass("dr-thumb-active");
+        })
       });
     </script>
 
