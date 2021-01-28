@@ -3805,7 +3805,7 @@
     </script>
 
     <script type="text/javascript">/* -------------------------------------------------------------------- PARALLAX COLUMN ------- */
-      window.addEventListener("resize", function () {
+
         let item1 = document.getElementById("col-1");
         let item2 = document.getElementById("col-2");
         let item3 = document.getElementById("col-3");
@@ -3844,7 +3844,7 @@
             item12.style.top = 0 + "px";
           });
         }
-      });
+
     </script>
 
     <script>/* -------------------------------------------------------------------- FIXED MENU ------- */
@@ -4443,6 +4443,35 @@
           sumtotal = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9 + sum10 + sum11 + sum12 + sum13 + sum14 + sum15 + sum16 + sum17 + sum18 + sum19 + sum20 + sum21 + sum22 + sum23 + sum24 + sum25 + sum26 + sum27 + sum28;
           document.getElementById("total").value = sumtotal;
         }
+        function plus7() {
+          i7 = i7+1;
+          document.getElementById("idisplay7").value = i7;
+          document.getElementById("cartdisplay4").value = i7;
+          sum7 = i7 * price7 * 1000;
+          document.getElementById("subtotal7").value = sum7;
+          sumtotal = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9 + sum10 + sum11 + sum12 + sum13 + sum14 + sum15 + sum16 + sum17 + sum18 + sum19 + sum20 + sum21 + sum22 + sum23 + sum24 + sum25 + sum26 + sum27 + sum28;
+          document.getElementById("total").value = sumtotal;
+        }
+        function plus8() {
+          i8 = i8+1;
+          document.getElementById("idisplay8").value = i8;
+          document.getElementById("cartdisplay8").value = i8;
+          sum8 = i8 * price8 * 1000;
+          document.getElementById("subtotal8").value = sum8;
+          sumtotal = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9 + sum10 + sum11 + sum12 + sum13 + sum14 + sum15 + sum16 + sum17 + sum18 + sum19 + sum20 + sum21 + sum22 + sum23 + sum24 + sum25 + sum26 + sum27 + sum28;
+          document.getElementById("total").value = sumtotal;
+        }
+        function plus9() {
+          i9 = i9+1;
+          document.getElementById("idisplay9").value = i9;
+          document.getElementById("cartdisplay9").value = i9;
+          sum9 = i9 * price9 * 1000;
+          document.getElementById("subtotal9").value = sum9;
+          sumtotal = sum1 + sum2 + sum3 + sum4 + sum5 + sum6 + sum7 + sum8 + sum9 + sum10 + sum11 + sum12 + sum13 + sum14 + sum15 + sum16 + sum17 + sum18 + sum19 + sum20 + sum21 + sum22 + sum23 + sum24 + sum25 + sum26 + sum27 + sum28;
+          document.getElementById("total").value = sumtotal;
+        }
+
+
 
         function minus1() {
           if ( i1 > 0 ){ i1 = i1-1; }
@@ -4525,8 +4554,12 @@
           i1 = 0;
           document.getElementById("idisplay1").value = i1;
           document.getElementById("cartdisplay1").value = i1;}
-        function reseti2() { i2 = 0; }
-        function reseti3() { i3 = 0; }
+        function reseti2() { i2 = 0;
+          document.getElementById("idisplay2").value = i2;
+          document.getElementById("cartdisplay2").value = i2;}
+        function reseti3() { i3 = 0;
+          document.getElementById("idisplay3").value = i3;
+          document.getElementById("cartdisplay3").value = i3;}
         function reseti4() { i4 = 0; }
         function reseti5() { i5 = 0; }
         function reseti6() { i6 = 0; }
